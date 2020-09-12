@@ -10,7 +10,7 @@ import org.plugface.core.annotations.Plugin;
 @Plugin(name = "Unit.Warrior_of_Light")
 public class Warrior_of_Light extends Unit{
 	public Warrior_of_Light() {
-		super("Warrior of Light", "wol", "swole");
+		super("Warrior of Light", "wol", "swole");;
 	}
 	
 	@Override
