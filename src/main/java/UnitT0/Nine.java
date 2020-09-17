@@ -53,6 +53,7 @@ public class Nine extends Unit{
 	@Override
 	public Ability getSpecificAbility(int id){
 		Ability ret = super.getSpecificAbility(id);
+		if(ret == null) return null;
 		switch(ret.getId()) {
 			case 7609: //S1
 			case 7617: //S2
