@@ -29,7 +29,7 @@ public class Maria extends Unit{
 				ids = new int[]{9523};
 				break;
 			case EX:
-				ids = new int[]{9526}; //Missing triggeredAbility Trap
+				ids = new int[]{9526};
 				break;
 			case AA:
 				ids = new int[]{6163};
@@ -56,6 +56,9 @@ public class Maria extends Unit{
 		switch(ret.getId()) {
 			case 6163:
 				ret.fixMissingAuraAilment(1224, 377, Ailment.EffectType.E1, Ailment.Target.Party);
+				break;
+			case 9526:
+				ret.addStaticAilmentEffect(482, "Lowers BRV by 100% of target Int BRV at end of turn");
 				break;
 		}
 		return ret;

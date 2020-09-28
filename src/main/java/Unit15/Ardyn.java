@@ -69,6 +69,7 @@ public class Ardyn extends Unit{
 				break;
 			case 9537: //Followup
 				ret.addStaticHit("Triggers after attacking", 0);
+				ret.setName("Zannen");
 				break;
 			case 9195: //BT
 				ret.addStaticAilmentEffect(1702, "+1 stack when breaking", 0);

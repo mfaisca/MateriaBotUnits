@@ -36,7 +36,7 @@ public class Faris extends Unit{
 				ids = new int[]{4363};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12309};
 				break;
 			case BT:
 				ids = new int[]{};
@@ -72,6 +72,9 @@ public class Faris extends Unit{
 				ret.fixMissingAuraAilment(1082, 272, null, Target.Party);
 				ret.removeHitDataById(6226);
 				ret.getDetails().setMovementCost(30);
+				break;
+			case 12309:
+				ret.getAilmentById(2390).getEffects().get(4).val_specify = -20;
 				break;
 		}
 		return ret;

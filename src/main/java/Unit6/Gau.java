@@ -27,7 +27,7 @@ public class Gau extends Unit{
 					case "GL":
 						ids = new int[]{5478, 6555, 6556, 6764}; break;
 					case "JP":
-						ids = new int[]{11270, 6555, 6556, 11271}; break;
+						ids = new int[]{11270, 6555, 6556, 6764}; break; //11271 - There was a new counter, but it wasn't on the rework?
 				}
 				break;
 			case S2:
@@ -35,7 +35,7 @@ public class Gau extends Unit{
 					case "GL":
 						ids = new int[]{5484, 6559, 6562, 6765}; break;
 					case "JP":
-						ids = new int[]{11273, 6559, 6562, 11274}; break;
+						ids = new int[]{11273, 6559, 6562, 6765}; break; //11274 - There was a new counter, but it wasn't on the rework?
 				}
 				break;
 			case EX:

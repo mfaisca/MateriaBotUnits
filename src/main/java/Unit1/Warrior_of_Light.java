@@ -101,9 +101,11 @@ public class Warrior_of_Light extends Unit{
 					a.getEffects().add(new Ailment.EffectGrouping(Ailment.EffectType.E60.getId()));
 				break;
 			case 9383: //LD
+				ret.removeHitDataById(10255);
 				Ailment ld = ret.getAilmentById(1746);
 				if(!ld.getName().equals("Guardian Shield")) {
-					ret.fixMissingAuraAilment(1745, 759, null, Ailment.Target.Party);
+					ret.fixMissingAuraAilment(1746, 759, null, Ailment.Target.Party);
+					//ld.getAuras().remove(759);
 					ld.setName("Guardian Shield");
 					Ailment.Aura a814 = ld.getAuras().get(814);
 					Ailment.Aura a815 = ld.getAuras().get(815);

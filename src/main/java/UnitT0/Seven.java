@@ -20,7 +20,7 @@ public class Seven extends Unit{
 				ids = new int[]{6224};
 				break;
 			case HP:
-				ids = new int[]{6229};
+				ids = new int[]{6229, 12499, 12569};
 				break;
 			case S1:
 				ids = new int[]{6221};
@@ -35,7 +35,7 @@ public class Seven extends Unit{
 				ids = new int[]{4375};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12159, 12499, 12569};
 				break;
 			case BT:
 				ids = new int[]{};
@@ -69,6 +69,27 @@ public class Seven extends Unit{
 				break;
 			case 4375:
 				ret.getAilmentById(1005).setRank(1);
+				break;
+			case 12159: //LD 
+				ret.getAilmentById(472).setRank(-1);
+				ret.getAilmentById(472).removeEffect(3);
+				ret.getAilmentById(472).getEffects().get(0).rankData = new String[] {"-10", "-25", "-50"};
+				ret.fixMissingAuraAilment(2540, 1091, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2540, 1092, Ailment.EffectType.E67, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2540, 1093, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2540, 1114, null, Ailment.Target.Party);
+				ret.addStaticHit("Enables 「**" + this.getSpecificAbility(12499).getName() + "**」 for 1 use");
+				break;
+			case 12499: //HP+ from LD
+				ret.fixRemoveDispels();
+				ret.fixDelayHitData(6832);
+				ret.fixMissingAuraAilment(2541, 1131, null, Ailment.Target.AoE);
+				ret.fixMissingAuraAilment(2541, 1132, null, Ailment.Target.AoE);
+				ret.fixMissingAuraAilment(2541, 1133, null, Ailment.Target.Party);
+				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(12158).getName() + "**」 for 1 use", 0);
+				break;
+			case 12569: //Trap
+				ret.addStaticHit("Triggered from 「**" + this.getSpecificAilment(2541).getName() + "**」", 0);
 				break;
 		}
 		return ret;

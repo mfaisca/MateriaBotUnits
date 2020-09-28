@@ -54,6 +54,11 @@ public class Cecil_Paladin extends Unit{
 	public Ability getSpecificAbility(int id){
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
+			case 7026:
+				ret.fixMissingAuraAilment(712, 35, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(712, 99, Ailment.EffectType.E4, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(712, 102, null, Ailment.Target.Party);
+				break;
 			case 7038: //AA
 				ret.fixMissingAuraAilment(1374, 464, Ailment.EffectType.E1, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1374, 463, null, Ailment.Target.Party);

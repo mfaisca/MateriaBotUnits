@@ -35,7 +35,7 @@ public class Ignis extends Unit{
 				ids = new int[]{6509};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12283};
 				break;
 			case BT:
 				ids = new int[]{};
@@ -52,7 +52,7 @@ public class Ignis extends Unit{
 	
 	@Override
 	public Ability getSpecificAbility(int id){
-		Ability ret = super.getSpecificAbility(id);
+		Ability ret = super.getSpecificAbility(id);;
 		switch(ret.getId()) {
 			case 6670:
 			case 6671:
@@ -87,6 +87,14 @@ public class Ignis extends Unit{
 			case 6499: //EX
 				ret.addStaticHit("Adds an extra HP hit for 100% of each party member Current BRV");
 				ret.addStaticHit("Both of your allies will act right after you, with chosen ally going first");
+				break;
+			case 12283:
+				ret.fixMissingAuraAilment(2486, 1043, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2486, 1095, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2486, 1143, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2486, 1144, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2486, 1145, Ailment.EffectType.E67, Ailment.Target.Party);
+				ret.getAilmentById(2486).setArgs(2485);
 				break;
 		}
 		return ret;

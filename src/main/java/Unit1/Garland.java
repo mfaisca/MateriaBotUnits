@@ -17,38 +17,28 @@ public class Garland extends Unit{
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
-				switch(region) {
-					case "GL":
-						ids = new int[]{5116}; break;
-					case "JP":
-						ids = new int[]{8792}; break;
-				}
+				ids = new int[]{8792};
 				break;
 			case HP:
-				switch(region) {
-					case "GL":
-						ids = new int[]{4814}; break;
-					case "JP":
-						ids = new int[]{8793}; break;
-				}
+				ids = new int[]{8793, 12413};
 				break;
 			case S1:
-				ids = new int[]{4812, 4813};
+				ids = new int[]{4813, 12413};
 				break;
 			case S2:
-				ids = new int[]{4821, 4822};
+				ids = new int[]{4822, 12413};
 				break;
 			case EX:
-				ids = new int[]{5120};
+				ids = new int[]{5120, 12413};
 				break;
 			case AA:
 				ids = new int[]{4830};
 				break;
 			case LD:
-				ids = new int[]{8950, 8951};
+				ids = new int[]{8951, 12413};
 				break;
 			case BT:
-				ids = new int[]{};
+				ids = new int[]{12150};
 				break;
 			case CA:
 				ids = new int[]{};
@@ -74,6 +64,12 @@ public class Garland extends Unit{
 					ret.fixMissingAuraAilment(1559, 645, Ailment.EffectType.E3, Ailment.Target.AoE);
 					ret.fixMissingAuraAilment(1559, 686, Ailment.EffectType.E2, Ailment.Target.AoE);
 				}
+				break;
+			case 12150:
+				ret.fixMissingAuraAilment(2370, 1056, Ailment.EffectType.E67, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2370, 1113, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2370, 1054, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2370, 1055, null, Ailment.Target.Party);
 				break;
 		}
 		return ret;

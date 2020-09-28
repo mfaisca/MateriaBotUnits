@@ -17,36 +17,16 @@ public class Basch extends Unit{
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
-				switch(region) {
-					case "GL":
-						ids = new int[]{5681}; break;
-					case "JP":
-						ids = new int[]{9315}; break;
-				}
+				ids = new int[]{9315};
 				break;
 			case HP:
-				switch(region) {
-					case "GL":
-						ids = new int[]{5682}; break;
-					case "JP":
-						ids = new int[]{9316}; break;
-				}
+				ids = new int[]{9316};
 				break;
 			case S1:
-				switch(region) {
-					case "GL":
-						ids = new int[]{5265}; break;
-					case "JP":
-						ids = new int[]{9310}; break;
-				}
+				ids = new int[]{9310};
 				break;
 			case S2:
-				switch(region) {
-					case "GL":
-						ids = new int[]{5270}; break;
-					case "JP":
-						ids = new int[]{9312}; break;
-				}
+				ids = new int[]{9312};
 				break;
 			case EX:
 				ids = new int[]{5689, 5690};

@@ -16,24 +16,10 @@ public class Shantotto extends Unit{
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
-				switch(region) {
-					case "GL":
-						ids = new int[]{6692};
-						break;
-					case "JP":
-						ids = new int[]{8853};
-						break;
-				}
+				ids = new int[]{8853};
 				break;
 			case HP:
-				switch(region) {
-					case "GL":
-						ids = new int[]{6693};
-						break;
-					case "JP":
-						ids = new int[]{9159, 9218};
-						break;
-				}
+				ids = new int[]{9159, 9218};
 				break;
 			case S1:
 				ids = new int[]{4060};

@@ -16,54 +16,19 @@ public class Rinoa extends Unit{
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
-				switch(region) {
-					case "GL":
-						ids = new int[]{3643, 3649};
-						break;
-					case "JP":
-						ids = new int[]{9516, 9499};
-						break;
-				}
+				ids = new int[]{9516, 9499};
 				break;
 			case HP:
-				switch(region) {
-					case "GL":
-						ids = new int[]{3646, 3652};
-						break;
-					case "JP":
-						ids = new int[]{9519, 9503};
-						break;
-				}
+				ids = new int[]{9519, 9503};
 				break;
 			case S1:
-				switch(region) {
-					case "GL":
-						ids = new int[]{3631, 3643, 3646};
-						break;
-					case "JP":
-						ids = new int[]{9528, 9516, 9519};
-						break;
-				}
+				ids = new int[]{9528, 9516, 9519};
 				break;
 			case S2:
-				switch(region) {
-					case "GL":
-						ids = new int[]{3637, 3649, 3652};
-						break;
-					case "JP":
-						ids = new int[]{3637, 9499, 9503};
-						break;
-				}
+				ids = new int[]{3637, 9499, 9503};
 				break;
 			case EX:
-				switch(region) {
-					case "GL":
-						ids = new int[]{6521, 3649, 3652};
-						break;
-					case "JP":
-						ids = new int[]{6521, 9499, 9503};
-						break;
-				}
+				ids = new int[]{6521, 9499, 9503};
 				break;
 			case AA:
 				ids = new int[]{6763};

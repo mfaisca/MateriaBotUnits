@@ -132,8 +132,8 @@ public class Beatrix extends Unit{
 				ret.getAilmentById(1418).getAuras().get(483).ailmentEffect = Ailment.EffectType.E1.getId();
 				ret.getAilmentById(1418).getAuras().get(483).target = Ailment.Target.Party.getId();
 				break;
-			case 10361:
-				ret.addStaticAilmentEffect(1126, "Trigger 「**" + super.getSpecificAbility(1951).getName() + "**」 when attacked");
+			case 10361: //LD
+				ret.addStaticAilmentEffect(1951, "Trigger 「**" + super.getSpecificAbility(10362).getName() + "**」 when attacked");
 				break;
 		}
 		return ret;

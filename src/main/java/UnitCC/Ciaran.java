@@ -37,7 +37,7 @@ public class Ciaran extends Unit{
 			case S2:
 				switch(region) {
 					case "GL": ids = new int[]{5473, 6988}; break;
-					case "JP": ids = new int[]{5473, 10408}; break;
+					case "JP": ids = new int[]{5473, 10407}; break;
 				}
 				break;
 			case EX:
@@ -90,11 +90,14 @@ public class Ciaran extends Unit{
 			case 6994: //HP+++
 			case 6988: //S2+
 			case 10509: //HP+++ JP
-			case 10408: //S2+ JP
+			case 10407: //S2+ JP
 				ret.removeHitDataById(7572);
 				ret.removeHitDataById(7573);
+				ret.removeHitDataById(10782);
 				if(ret.getId() == 6994)
 					ret.getHitDataById(7757).getArguments()[1] = 1996;
+				else if(ret.getId() == 10407)
+					;
 				else
 					ret.getHitDataById(7760).getArguments()[1] = 1996;
 				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1996).getName() + "**」 has 5 stacks", 0);
