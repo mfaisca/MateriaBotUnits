@@ -23,10 +23,20 @@ public class Golbez extends Unit{
 				ids = new int[]{6234};
 				break;
 			case S1:
-				ids = new int[]{3553, 3554, 3555};
+				switch(region) {
+					case "GL":
+						ids = new int[]{3553, 3554, 3555}; break;
+					case "JP":
+						ids = new int[]{12417, 12418, 12419}; break;
+				}
 				break;
 			case S2:
-				ids = new int[]{3565, 3566, 3567};
+				switch(region) {
+					case "GL":
+						ids = new int[]{3565, 3566, 3567}; break;
+					case "JP":
+						ids = new int[]{12423, 12424, 12425}; break;
+				}
 				break;
 			case EX:
 				ids = new int[]{6233};
@@ -35,10 +45,10 @@ public class Golbez extends Unit{
 				ids = new int[]{6219};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12429};
 				break;
 			case BT:
-				ids = new int[]{};
+				ids = new int[]{12432};
 				break;
 			case CA:
 				ids = new int[]{};
@@ -57,7 +67,12 @@ public class Golbez extends Unit{
 		if(shadowDragon != null)
 			shadowDragon.setRank(-1);
 		switch(ret.getId()) {
-			
+			case 12432:
+				ret.fixMissingAuraAilment(2599, 1117, Ailment.EffectType.E67, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2599, 1118, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2599, 1119, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2599, 1120, null, Ailment.Target.AoE);
+				break;
 		}
 		return ret;
 	}

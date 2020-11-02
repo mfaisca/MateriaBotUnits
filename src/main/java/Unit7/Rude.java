@@ -59,7 +59,6 @@ public class Rude extends Unit{
 				break;
 			case 9952: //S1
 			case 9956:{ //S2
-				//Fix Buff Effects
 				ret.fixStupidCriticalDamage(1611, 50);
 				Ailment a = ret.getAilmentById(1837);
 				a.getAuras().get(819).ailmentEffect = Ailment.EffectType.E1.getId();
@@ -68,6 +67,7 @@ public class Rude extends Unit{
 				a.getAuras().get(820).target = Ailment.Target.Party.getId();
 				a.getAuras().get(821).ailmentEffect = Ailment.EffectType.E58.getId();
 				a.getAuras().get(821).target = Ailment.Target.Party.getId();
+				a.getAuras().get(821).rankData[0] = a.getAuras().get(821).rankData[0].replace("-", "");
 			}break;
 			case 9960:{ //EX
 				ret.fixStupidCriticalDamage(1611, 50);
@@ -88,6 +88,7 @@ public class Rude extends Unit{
 				a.getAuras().get(905).target = Ailment.Target.Party.getId();
 				a.getAuras().get(906).ailmentEffect = Ailment.EffectType.E58.getId();
 				a.getAuras().get(906).target = Ailment.Target.Party.getId();
+				a.getAuras().get(906).rankData[0] = a.getAuras().get(906).rankData[0].replace("-", "");
 				}break;
 		}
 		return ret;

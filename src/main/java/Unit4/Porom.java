@@ -59,8 +59,10 @@ public class Porom extends Unit{
 				ret.fixMissingAuraAilment(909, 126, Ailment.EffectType.E1, Ailment.Target.Party);
 				ret.getAilmentById(909).setRank(-1);
 				break;
-			case 4203:
 			case 4204:
+				ret.getAilmentById(292).setTarget(Ailment.Target.Ally);
+				ret.getAilmentById(79).setTarget(Ailment.Target.Ally);
+			case 4203:
 				ret.fixMissingAuraAilment(854, 114, Ailment.EffectType.E5, Ailment.Target.Party);
 				ret.getAilmentById(854).setRank(-1);
 				break;

@@ -35,7 +35,7 @@ public class Palom extends Unit{
 				ids = new int[]{5354};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12695, 12696, 12697};
 				break;
 			case BT:
 				ids = new int[]{};
@@ -81,6 +81,13 @@ public class Palom extends Unit{
 				ret.removeHitDataById(3634);
 				ret.addStaticHit("Extends 「**" + this.getSpecificAbility(9676).getName() + "**」 duration by 3 turns");
 				ret.addStaticHit("Extends 「**" + this.getSpecificAbility(9678).getName() + "**」 duration by 3 turns");
+			case 12697:
+			case 12696:
+			case 12695:
+				if(ret.getId() != 12697)
+					ret.addStaticHit("Turns to 「**" + this.getSpecificAbility(ret.getId()+1).getName() + "**」 after use");
+				ret.removeAilmentById(2698);
+				ret.addStaticAilmentEffect(2666, "+50% HP Damage dealt next turn after breaking a target");
 		}
 		return ret;
 	}

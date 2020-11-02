@@ -35,7 +35,12 @@ public class Basch extends Unit{
 				ids = new int[]{5694};
 				break;
 			case LD:
-				ids = new int[]{9204};
+				switch(region) {
+					case "GL":
+						ids = new int[]{9204}; break;
+					case "JP":
+						ids = new int[]{12039}; break;
+				}
 				break;
 			case BT:
 				ids = new int[]{};

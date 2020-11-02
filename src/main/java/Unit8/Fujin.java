@@ -16,7 +16,10 @@ public class Fujin extends Unit{
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
-				ids = new int[]{8200};
+				switch(region) {
+					case "GL": ids = new int[]{8200}; break;
+					case "JP": ids = new int[]{12622}; break;
+				}
 				break;
 			case HP:
 				ids = new int[]{8201};
@@ -34,7 +37,7 @@ public class Fujin extends Unit{
 				ids = new int[]{5763};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12559};
 				break;
 			case BT:
 				ids = new int[]{};

@@ -35,7 +35,12 @@ public class Desch extends Unit{
 				ids = new int[]{8507};
 				break;
 			case LD:
-				ids = new int[]{9006, 8534};
+				switch(region) {
+					case "GL":
+						ids = new int[]{9006, 8534}; break;
+					case "JP":
+						ids = new int[]{12210, 8534}; break;
+				}
 				break;
 			case BT:
 				ids = new int[]{};
@@ -69,6 +74,10 @@ public class Desch extends Unit{
 				break;
 			case 9006:
 				ret.fixMissingAuraAilment(1585, 635, null, Ailment.Target.Party);
+				break;
+			case 12210:
+				ret.fixMissingAuraAilment(2571, 1097, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2571, 1115, null, Ailment.Target.Party).rankData[1] = "30";
 				break;
 			case 8534:
 				ret.addStaticHit("Activates only at end of enemy turn.");

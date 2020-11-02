@@ -35,7 +35,12 @@ public class Amidatelion extends Unit{
 				ids = new int[]{8492};
 				break;
 			case LD:
-				ids = new int[]{8917};
+				switch(region) {
+					case "GL":
+						ids = new int[]{8917}; break;
+					case "JP":
+						ids = new int[]{12019}; break;
+				}
 				break;
 			case BT:
 				ids = new int[]{};

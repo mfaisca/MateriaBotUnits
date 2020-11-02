@@ -89,7 +89,6 @@ public class Seven extends Unit{
 				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(12158).getName() + "**」 for 1 use", 0);
 				break;
 			case 12569: //Trap
-				ret.addStaticHit("Triggered from 「**" + this.getSpecificAilment(2541).getName() + "**」", 0);
 				break;
 		}
 		return ret;

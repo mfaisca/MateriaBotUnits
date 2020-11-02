@@ -23,10 +23,20 @@ public class Celes extends Unit{
 				ids = new int[]{5636};
 				break;
 			case S1:
-				ids = new int[]{5633};
+				switch(region) {
+					case "GL":
+						ids = new int[]{5633}; break;
+					case "JP":
+						ids = new int[]{11631}; break;
+				}
 				break;
 			case S2:
-				ids = new int[]{5635};
+				switch(region) {
+					case "GL":
+						ids = new int[]{5635}; break;
+					case "JP":
+						ids = new int[]{11633}; break;
+				}
 				break;
 			case EX:
 				ids = new int[]{5640};

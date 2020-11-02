@@ -1,6 +1,7 @@
 ﻿package UnitT0;
 import com.materiabot.GameElements.*;
 import com.materiabot.GameElements.Unit;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -35,7 +36,12 @@ public class Nine extends Unit{
 				ids = new int[]{7627};
 				break;
 			case LD:
-				ids = new int[]{9377};
+				switch(region) {
+					case "JP":
+						ids = new int[]{12564};break;
+					case "GL":
+						ids = new int[]{9377};break;
+				}
 				break;
 			case BT:
 				ids = new int[]{};
@@ -68,6 +74,21 @@ public class Nine extends Unit{
 			case 9374: //EX
 				ret.addStaticAilmentEffect(1468, "Potencies double when against 2+ enemies", 0);
 				break;
+			case 12564:
+				if(ret.getAilmentById(2643) != null) {
+					ret.fixMissingAuraAilment(2643, 1176, Ailment.EffectType.E67, Ailment.Target.Party);
+					ret.fixMissingAuraAilment(2643, 1175, null, Ailment.Target.Party);
+					ret.fixMissingAuraAilment(2643, 1167, Ailment.EffectType.E58, Ailment.Target.Party);
+					ret.getAilmentById(1459).getEffects().addAll(ret.getAilmentById(2643).getEffects());
+					ret.getAilmentById(1459).getAuras().putAll(ret.getAilmentById(2643).getAuras());
+					ret.removeAilmentById(2643);
+				}
+				ret.getAilmentById(1459).setRank(-1);
+//				ret.getAilmentById(1712).getEffects().get(2).rankData = Arrays.asList("030040100").toArray(new String[0]);
+//				ret.getAilmentById(1712).getEffects().get(4).rankData = Arrays.asList("030040100").toArray(new String[0]);
+				ret.getAilmentById(1712).getEffects().get(2).rankData = Arrays.asList("000", "030", "000").toArray(new String[0]);
+				ret.getAilmentById(1712).getEffects().get(3).rankData = Arrays.asList("000", "040", "000").toArray(new String[0]);
+				ret.getAilmentById(1712).getEffects().get(4).rankData = Arrays.asList("000", "100", "000").toArray(new String[0]);
 			case 9377: //LD
 				if(ret.getAilmentById(1712) == null)
 					ret.getDetails().getAilments().add(this.getSpecificAilment(1712));

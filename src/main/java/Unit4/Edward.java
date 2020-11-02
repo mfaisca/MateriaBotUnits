@@ -35,7 +35,12 @@ public class Edward extends Unit{
 				ids = new int[]{9713};
 				break;
 			case LD:
-				ids = new int[]{9693, 9717};
+				switch(region) {
+					case "GL":
+						ids = new int[]{9693, 9717}; break;
+					case "JP":
+						ids = new int[]{12645, 9717}; break;
+				}
 				break;
 			case BT:
 				ids = new int[]{};
@@ -54,6 +59,8 @@ public class Edward extends Unit{
 	public Ability getSpecificAbility(int id){
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
+			case 9717:
+				ret.setName(ret.getName().replace(".", "")); break;
 			case 9684: //S1
 				ret.fixMissingAuraAilment(1747, 762, Ailment.EffectType.E1, Ailment.Target.Allies);
 				ret.fixMissingAuraAilment(1747, 764, Ailment.EffectType.E67, Ailment.Target.Allies);
@@ -69,10 +76,18 @@ public class Edward extends Unit{
 			case 9396: //S2+
 				ret.removeHitDataById(10105);
 				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(1748).getName() + "**」 is active", 0);
+				ret.addStaticHit("Free ability use", 0);
 				break;
 			case 9688: //EX
 				ret.addStaticAilmentEffect(1750, "Effects depend on stacks", 0);
 				break;
+			case 12645:
+				ret.getAilmentById(2657).removeEffect(287);
+				ret.fixMissingAuraAilment(2657, 1179, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2657, 1180, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2657, 1181, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2657, 1182, null, Ailment.Target.Party);
+				ret.addStaticAilmentEffect(2657, "+10% party BRV Damage dealt if 「**" + this.getSpecificAilment(1749).getName() + "**」 is active");
 			case 9693: //LD
 				ret.getAilmentById(1751).removeEffect(288);
 				ret.addStaticAilmentEffect(1751, "-1 duration when hit", 0);

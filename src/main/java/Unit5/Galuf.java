@@ -34,7 +34,7 @@ public class Galuf extends Unit{
 				ids = new int[]{7354};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12598, 12599};
 				break;
 			case BT:
 				ids = new int[]{};
@@ -66,6 +66,16 @@ public class Galuf extends Unit{
 				break;
 			case 7354: //AA
 				ret.fixMissingAuraAilment(1421, 529, null, Ailment.Target.Party);
+				break;
+			case 12598: //LD
+				Ailment ldBuff = ret.getAilmentById(2501);
+				ldBuff.setRank(0);
+				ldBuff.getEffects().remove(ldBuff.getEffects().stream().filter(e -> e.effectId == 151).findFirst().orElse(null));
+				ret.fixMissingAuraAilment(2501, 1166, Ailment.EffectType.E67, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2501, 1191, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2501, 1165, null, Ailment.Target.Party);
+				ldBuff.removeEffect(395);
+				ldBuff.getEffects().stream().filter(e -> e.effectId == 46).findFirst().get().rankData[0] = "100";
 				break;
 		}
 		return ret;

@@ -79,4 +79,11 @@ public class Ardyn extends Unit{
 		}
 		return ret;
 	}
+	
+	@Override
+	public Passive getSpecificPassive(Passive p) {
+		if(p.getLevel() == 50)
+			p.setManualDescription("Raises ATK, DEF, Int BRV, Max BRV by 10% when 「**Spectral Charge**」 is at least 3 stacks");
+		return p;
+	}
 }

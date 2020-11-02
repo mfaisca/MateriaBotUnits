@@ -55,24 +55,19 @@ public class Caius extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		ret.removeHitDataById(7713);
 		switch(ret.getId()) {
+			case 7155: //S1
+				ret.getAilmentById(1397).setRank(-1);
+				break;
+			case 7156: //S1+
+			case 7164: //S2+
+				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1397).getName() + "**」 has 5 stacks", 0);
+				break;
+			case 7786: //EX
 			case 7787: //EX+
 				ret.fixDelayHitData(5126);
 				ret.getAilmentById(1480).getEffects().get(0).effectId = Ailment.EffectType.E140.getId();
 				ret.getAilmentById(1480).getEffects().get(1).effectId = Ailment.EffectType.E4.getId();
 				ret.getAilmentById(1480).getEffects().get(2).effectId = Ailment.EffectType.E5.getId();
-			case 7156: //S1+
-			case 7164: //S2+
-				ret.getAilmentById(1397).setRank(-1);
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1397).getName() + "**」 has 5 stacks", 0);
-				break;
-			case 7786: //EX
-				ret.fixDelayHitData(5126);
-				ret.getAilmentById(1480).getEffects().get(0).effectId = Ailment.EffectType.E140.getId();
-				ret.getAilmentById(1480).getEffects().get(1).effectId = Ailment.EffectType.E4.getId();
-				ret.getAilmentById(1480).getEffects().get(2).effectId = Ailment.EffectType.E5.getId();
-			case 7155: //S1
-				ret.getAilmentById(1397).setRank(-1);
-				break;
 		}
 		return ret;
 	}

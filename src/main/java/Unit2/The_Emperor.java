@@ -23,10 +23,20 @@ public class The_Emperor extends Unit{
 				ids = new int[]{6287, 9789};
 				break;
 			case S1:
-				ids = new int[]{6026, 6028};
+				switch(region) {
+					case "GL":
+						ids = new int[]{6026, 6028}; break;
+					case "JP":
+						ids = new int[]{11641, 6028}; break;
+				}
 				break;
 			case S2:
-				ids = new int[]{6040, 6042};
+				switch(region) {
+					case "GL":
+						ids = new int[]{6040, 6042}; break;
+					case "JP":
+						ids = new int[]{11647, 6042}; break;
+				}
 				break;
 			case EX:
 				ids = new int[]{6056, 6042, 6028, 6058};
@@ -38,7 +48,7 @@ public class The_Emperor extends Unit{
 				ids = new int[]{9735};
 				break;
 			case BT:
-				ids = new int[]{};
+				ids = new int[]{11234, 11649};
 				break;
 			case CA:
 				ids = new int[]{};
@@ -67,12 +77,19 @@ public class The_Emperor extends Unit{
 				ret.addStaticHit("Trigger 「**" + super.getSpecificAilment(413).getName() + "**」 on target", 1);
 				ret.addStaticHit("Trigger 「**" + super.getSpecificAilment(417).getName() + "**」 on target", 2);
 				break;
+			case 11234:
+				ret.fixMissingAuraAilment(2056, 1025, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2056, 1026, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2056, 936, null, Ailment.Target.Party);
+				break;
 			case 6028: //S1 Trap
 				name = name != null ? name : super.getSpecificAilment(413).getName();
 			case 6042: //S2 Trap
 				name = name != null ? name : super.getSpecificAilment(415).getName();
 			case 6058: //EX Trap
 				name = name != null ? name : super.getSpecificAilment(417).getName();
+			case 11649: //BT Trap
+				name = name != null ? name : super.getSpecificAilment(2431).getName();
 				ret.setName(name);
 				ret.setUseCount(-1);
 				ret.fixDelayHitData(6695);

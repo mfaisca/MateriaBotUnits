@@ -79,7 +79,7 @@ public class Kefka extends Unit{
 				break;
 			case 9300: //BT
 				ret.getAilmentById(1735).getAuras().remove(744);
-				ret.addStaticAilmentEffect(1735, "+5% self HP Damage dealt per debuff on target");
+				ret.addStaticAilmentEffect(1735, "+5% party HP Damage dealt per debuff on target");
 				break;
 		}
 		return ret;

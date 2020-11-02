@@ -38,7 +38,7 @@ public class Vivi extends Unit{
 				ids = new int[]{5755};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12132, 12130};
 				break;
 			case BT:
 				ids = new int[]{};
@@ -51,6 +51,16 @@ public class Vivi extends Unit{
 			return super.getAbility(type, region);
 		else
 			return IntStream.of(ids).boxed().map(i -> this.getSpecificAbility(i)).collect(Collectors.toList());
+	}
+	
+	@Override
+	public Passive getSpecificPassive(Passive ret) {
+		switch(ret.getId()) {
+			case 140:
+				ret.setTarget(Passive.Target.T2);
+				break;
+		}
+		return ret;
 	}
 	
 	@Override
@@ -82,6 +92,19 @@ public class Vivi extends Unit{
 					ret.getDetails().getHits().add(7, adh);
 				}
 				break;
+			case 12132:
+				ret.getAilmentById(2389).setName("Memories of the Soul");
+				ret.getAilmentById(2389).getEffects().get(0).val_specify = 12130;
+		}
+		return ret;
+	}
+	
+	@Override
+	public Ailment getSpecificAilment(int id){
+		Ailment ret = super.getSpecificAilment(id);
+		switch(id) {
+			case 2389:
+				ret.setName("Memories of the Soul");
 		}
 		return ret;
 	}

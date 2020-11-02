@@ -9,7 +9,7 @@ import org.plugface.core.annotations.Plugin;
 @Plugin(name = "Unit.Onion_Knight")
 public class Onion_Knight extends Unit{
 	public Onion_Knight() {
-		super("Onion Knight", "ok");
+		super("Onion Knight", "ok", "onion");
 	}
 	
 	@Override

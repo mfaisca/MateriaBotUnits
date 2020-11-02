@@ -46,7 +46,7 @@ public class Kuja extends Unit{
 				}
 				break;
 			case S2:
-				ids = new int[]{5408, 5409};
+				ids = new int[]{5408, 5414};
 				break;
 			case EX:
 				ids = new int[]{5399};
@@ -76,6 +76,9 @@ public class Kuja extends Unit{
 		if(ret.getAilmentById(249) != null)
 			ret.getAilmentById(249).setRank(-1);
 		switch(ret.getId()) {
+			case 5414: //S2
+				ret.fixMergeAbility(5418);
+				break;
 			case 5399: //EX
 				ret.getAilmentById(723).getAuras().get(71).ailmentEffect = Ailment.EffectType.E1.getId();
 				ret.getAilmentById(723).getAuras().get(71).target = Ailment.Target.Party.getId();

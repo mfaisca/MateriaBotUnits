@@ -76,7 +76,7 @@ public class Noctis extends Unit{
 			case 9285: //BT
 				break;
 			case 9217: //BT Follow Up
-				ret.setName("BT Follow Up");
+				ret.setName("Moratta");
 				break;
 			case 4068: //AA
 				ret.addStaticHit("Turns 「**" + super.getSpecificAbility(4315).getName() + "**」 to 「**" + super.getSpecificAbility(4316).getName() + "**」");

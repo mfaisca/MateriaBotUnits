@@ -85,7 +85,7 @@ public class Lightning extends Unit{
 				ret.fixMissingAuraAilment(1792, 787, null, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1792, 855, null, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1792, 871, null, Ailment.Target.Party);
-				ret.fixMissingAuraAilment(1792, 856, Ailment.EffectType.E300, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(1792, 856, Ailment.EffectType.E67, Ailment.Target.Party);
 				break;
 		}
 		return ret;

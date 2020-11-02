@@ -53,18 +53,23 @@ public class Thancred extends Unit{
 	@Override
 	public Ability getSpecificAbility(int id){
 		Ability ret = super.getSpecificAbility(id);
-		Ailment ailN = this.getSpecificAilment(-1);
-		if(ailN != null) {
-			ailN.setId(749);
-			ailN.setName("Ninki");
-			this.getAilments().remove(-1);
-			this.getAilments().put(749, ailN);
-		}
-		ailN = this.getSpecificAilment(749);
 		switch(ret.getId()) {
 			case 9880: //BRV++ Ninki
 			case 9879: //EX+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(749).getName() + "**」 has 3 stacks", 0);
+				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(749).getName() + "**」 has 3 stacks", 0);
+		}
+		return ret;
+	}
+	
+	@Override
+	public Ailment getSpecificAilment(int id){
+		Ailment ret = super.getSpecificAilment(id);
+		if(ret == null && id == 749) {
+			ret = new Ailment(this);
+			ret.setId(749);
+			ret.setName("Ninki");
+			this.getAilments().put(749, ret);
+			return getSpecificAilment(749);
 		}
 		return ret;
 	}

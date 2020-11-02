@@ -35,7 +35,7 @@ public class Deuce extends Unit{
 				ids = new int[]{5234};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12026};
 				break;
 			case BT:
 				ids = new int[]{};
@@ -69,6 +69,15 @@ public class Deuce extends Unit{
 				break;
 			case 5230: //EX
 				ret.fixMissingAuraAilment(1117, 300, Ailment.EffectType.E67, Ailment.Target.Party);
+				break;
+			case 12026:
+				ret.getAilmentById(2388).setRank(0);
+				ret.fixMissingAuraAilment(2388, 1072, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2388, 1073, Ailment.EffectType.E67, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2388, 1074, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2388, 1075, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2388, 1076, null, Ailment.Target.Party);
+				ret.fixMissingAuraAilment(2388, 1096, null, Ailment.Target.Party);
 				break;
 		}
 		return ret;

@@ -16,16 +16,26 @@ public class Tifa extends Unit{
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
-				ids = new int[]{6003};
+				ids = new int[]{6003, 12677};
 				break;
 			case HP:
-				ids = new int[]{6004};
+				ids = new int[]{6004, 12678};
 				break;
 			case S1:
-				ids = new int[]{5786, 6002};
+				switch(region) {
+					case "GL":
+						ids = new int[]{5786, 6002}; break;
+					case "JP":
+						ids = new int[]{12668, 12669}; break;
+				}
 				break;
 			case S2:
-				ids = new int[]{5788};
+				switch(region) {
+					case "GL":
+						ids = new int[]{5788}; break;
+					case "JP":
+						ids = new int[]{12671}; break;
+				}
 				break;
 			case EX:
 				ids = new int[]{5792};
@@ -34,7 +44,7 @@ public class Tifa extends Unit{
 				ids = new int[]{5797};
 				break;
 			case LD:
-				ids = new int[]{};
+				ids = new int[]{12676, 12677, 12678};
 				break;
 			case BT:
 				ids = new int[]{};
@@ -72,6 +82,22 @@ public class Tifa extends Unit{
 				ret = skill2;
 				ret.fixDelayHitData(5126);
 				ret.setName(name);
+				break;
+			case 12671: //S2 JP
+				ret.fixMergeAbility(12673);
+				ret.getDetails().setChaseDmg(3);
+				Ailment ail2 = ret.getAilmentById(289);
+				String[] rankData2 = ail2.getEffects().get(1).rankData;
+				rankData2[6] = rankData2[5];
+				break;
+			case 12676: //LD
+				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(12677).getName() + "**」 for 1 turn");
+				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(12678).getName() + "**」 for 1 turn");
+				break;
+			case 12677:
+			case 12678:
+				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(12676).getName() + "**」 for 1 use __**(shared)**__", 0);
+				ret.fixRemoveDispels();
 				break;
 		}
 		return ret;
