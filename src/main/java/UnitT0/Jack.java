@@ -77,8 +77,8 @@ public class Jack extends Unit{
 				break;
 			case 11014: //LD
 				ret.getAilmentById(2020).setRank(-1);
-				ret.getAilmentById(2020).getEffects().get(0).rankData = new String[] {"-10", "-15", "-20", "-30", "-50"};
-				ret.getAilmentById(2020).getEffects().get(1).rankData = new String[] {"-10", "-15", "-20", "-25", "-30"};
+				ret.getAilmentById(2020).getEffects().get(2).rankData = new String[] {"-10", "-15", "-20", "-30", "-50"};
+				ret.getAilmentById(2020).getEffects().get(3).rankData = new String[] {"-10", "-15", "-20", "-25", "-30"};
 				ret.addStaticAilmentEffect(2020, "+1 stack to target after taking any attack", 0);
 			case 7142: //S2
 				ret.fixRemoveDispels();

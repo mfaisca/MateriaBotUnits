@@ -17,37 +17,13 @@ public class Eight extends Unit{
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
-				switch(region) {
-					case "JP":
-						ids = new int[]{10051}; break;
-					case "GL":
-						ids = new int[]{6289}; break;
-				}
-				break;
+				ids = new int[]{6289}; break;
 			case HP:
-				switch(region) {
-					case "JP":
-						ids = new int[]{10080, 10110}; break;
-					case "GL":
-						ids = new int[]{6598, 6292}; break;
-				}
-				break;
+				ids = new int[]{6598, 6292}; break;
 			case S1:
-				switch(region) {
-					case "JP":
-						ids = new int[]{10062}; break;
-					case "GL":
-						ids = new int[]{5939}; break;
-				}
-				break;
+				ids = new int[]{5939}; break;
 			case S2:
-				switch(region) {
-					case "JP":
-						ids = new int[]{10064}; break;
-					case "GL":
-						ids = new int[]{5945}; break;
-				}
-				break;
+				ids = new int[]{5945}; break;
 			case EX:
 				ids = new int[]{6300, 6302};
 				break;
@@ -81,6 +57,10 @@ public class Eight extends Unit{
 				break;
 			case 6302:
 				ret.setName("Breaksight Blow");
+				break;
+			case 10074:
+				ret.addStaticAilmentEffect(1898, "Raises BRV by 20% of HP Damage Dealt after every HP hit").setDuration(6);
+				ret.getAilmentById(47).setDuration(5);
 				break;
 		}
 		return ret;

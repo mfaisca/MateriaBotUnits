@@ -10,7 +10,7 @@ import org.plugface.core.annotations.Plugin;
 public class EaldNarche extends Unit{
 	public EaldNarche() {
 		super("Eald'Narche", "eald'narshe", "ealdnarche", "ealdnarshe", "eald", 
-				"elnacho", "el'nacho", "el nacho", 
+				"elnacho", "el'nacho", "el nacho", "nacho", 
 				"el donash", "eldonash", "el'donash");
 	}
 	

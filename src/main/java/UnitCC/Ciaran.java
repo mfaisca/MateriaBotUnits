@@ -99,7 +99,7 @@ public class Ciaran extends Unit{
 				else if(ret.getId() == 10407)
 					;
 				else
-					ret.getHitDataById(7760).getArguments()[1] = 1996;
+					;//ret.getHitDataById(7760).getArguments()[1] = 1996;
 				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1996).getName() + "**」 has 5 stacks", 0);
 				break;
 			case 5465: //S1

@@ -59,7 +59,7 @@ public class Setzer extends Unit{
 				ret.fixMergeAbility(2562);
 				break;
 			case 2774: //S2
-				ret.fixDelayHitData(949);
+				//ret.fixDelayHitData(949);
 				break;
 			case 4718:
 				ret.fixDelayHitData(3077);
