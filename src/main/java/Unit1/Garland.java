@@ -15,7 +15,7 @@ public class Garland extends Unit{
 	@Override
 	public List<Ability> getAbility(Ability.Type type, String region) {
 		int[] ids = new int[0];
-		switch(type) {
+		switch(type) { 
 			case BRV:
 				ids = new int[]{8792};
 				break;
