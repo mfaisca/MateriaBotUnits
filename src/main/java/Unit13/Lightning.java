@@ -67,10 +67,10 @@ public class Lightning extends Unit{
 				ret.removeHitDataById(5204);
 				break;
 			case 4534: //S1+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(515).getName() + "**」 has 2 stacks", 0);
+				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(518).getName() + "**」 has 2 stacks", 0);
 				break;
 			case 4540: //S2+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(518).getName() + "**」 has 2 stacks", 0);
+				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(515).getName() + "**」 has 2 stacks", 0);
 				break;
 			case 7559:
 				ret.fixDelayHitData(3732);

@@ -1,5 +1,4 @@
 ﻿package Unit1;
-import Shared.Methods;
 import com.materiabot.GameElements.*;
 import com.materiabot.GameElements.Unit;
 import java.util.List;
@@ -32,7 +31,12 @@ public class Warrior_of_Light extends Unit{
 				ids = new int[]{3925};
 				break;
 			case LD:
-				ids = new int[]{9383};
+				switch(region) {
+					case "GL":
+						ids = new int[]{9383}; break;
+					case "JP":
+						ids = new int[] {12988}; break;
+				}
 				break;
 			case BT:
 				ids = new int[]{9384};
@@ -70,7 +74,7 @@ public class Warrior_of_Light extends Unit{
 				if(a.getEffects().size() == 0)
 					a.getEffects().add(new Ailment.EffectGrouping(Ailment.EffectType.E60.getId()));
 				break;
-			case 9383: //LD
+			case 9383:{ //LD
 				ret.removeHitDataById(10255);
 				Ailment ld = ret.getAilmentById(1746);
 				if(!ld.getName().equals("Guardian Shield")) {
@@ -92,10 +96,12 @@ public class Warrior_of_Light extends Unit{
 					ret.fixMissingAuraAilment(1746, 816, Ailment.EffectType.E2, Ailment.Target.Party);
 					ret.fixMissingAuraAilment(1746, 817, Ailment.EffectType.E4, Ailment.Target.Party);
 				}
+			}	break;
+			case 12988:
+				ret.removeHitDataById(10255);
+				//TODO
 				break;
 			case 9384: //BT
-				Ailment bt = ret.getAilmentById(1745);
-				bt.getAuras().get(758).rankData = new String[] {Methods.splitRankData(bt.getAuras().get(758).rankData[0])[2]};
 				ret.fixMissingAuraAilment(1745, 758, null, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1745, 843, Ailment.EffectType.E67, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1745, 844, null, Ailment.Target.Party);

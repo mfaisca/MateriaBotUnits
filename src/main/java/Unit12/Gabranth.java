@@ -40,7 +40,7 @@ public class Gabranth extends Unit{
 				ids = new int[]{8522};
 				break;
 			case LD:
-				ids = new int[]{11502};
+				ids = new int[]{11506, 11507};
 				break;
 			case BT:
 				ids = new int[]{};
@@ -94,7 +94,10 @@ public class Gabranth extends Unit{
 				a.target = Ailment.Target.Party.getId();
 				a.rankData[0] = a.rankData[0].replace("-", "");
 				break;
-			case 11502:
+			case 11507:
+				ret.addStaticHit("Enabled when attacking a target with 「**" + this.getSpecificAilment(1583).getName() + "**」", 1);
+			case 11506:
+				ret.addStaticHit("Raises BRV Damage by 50% against debuffed targets", 0); //According to Rem, no value in data
 				Ailment.Aura a2 = ret.fixMissingAuraAilment(2398, 1012, null, Ailment.Target.Party);
 				a2.rankData[0] = a2.rankData[0].replace("-", "");
 				break;

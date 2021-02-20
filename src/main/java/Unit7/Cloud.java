@@ -54,7 +54,7 @@ public class Cloud extends Unit{
 				ids = new int[]{5029};
 				break;
 			case LD:
-				ids = new int[]{10012};
+				ids = new int[]{11513};
 				break;
 			case BT:
 				ids = new int[]{10013};
@@ -101,6 +101,9 @@ public class Cloud extends Unit{
 				ret.fixMissingAuraAilment(1842, 827, null, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1842, 828, null, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1842, 829, null, Ailment.Target.Party);
+				break;
+			case 11513:
+				ret.fixDelayHitData(10879);
 				break;
 		}
 		return ret;

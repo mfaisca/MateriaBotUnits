@@ -11,23 +11,23 @@ public class Gau extends Unit{
 	public Gau() {
 		super("Gau");
 	}
-	
+
 	@Override
 	public List<Ability> getAbility(Ability.Type type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
-				ids = new int[]{6806};
+				ids = new int[]{6555, 6559, 10176};
 				break;
 			case HP:
-				ids = new int[]{6807};
+				ids = new int[]{6556, 6562, 10177};
 				break;
 			case S1:
 				switch(region) {
 					case "GL":
 						ids = new int[]{5478, 6555, 6556, 6764}; break;
 					case "JP":
-						ids = new int[]{11270, 6555, 6556, 6764}; break; //11271 - There was a new counter, but it wasn't on the rework?
+						ids = new int[]{11270, 6555, 6556, 11271}; break; //LD Boards
 				}
 				break;
 			case S2:
@@ -35,7 +35,7 @@ public class Gau extends Unit{
 					case "GL":
 						ids = new int[]{5484, 6559, 6562, 6765}; break;
 					case "JP":
-						ids = new int[]{11273, 6559, 6562, 6765}; break; //11274 - There was a new counter, but it wasn't on the rework?
+						ids = new int[]{11273, 6559, 6562, 11274}; break; //LD Boards
 				}
 				break;
 			case EX:
@@ -45,7 +45,12 @@ public class Gau extends Unit{
 				ids = new int[]{6571};
 				break;
 			case LD:
-				ids = new int[]{10055, 10176, 10177, 11276};
+				switch(region) {
+					case "GL":
+						ids = new int[]{10055, 10176, 10177, 10203}; //LD Boards 11276
+					case "JP":
+						ids = new int[]{11275, 10176, 10177, 11276}; //LD Boards
+				}
 				break;
 			case BT:
 				ids = new int[]{};
@@ -68,6 +73,7 @@ public class Gau extends Unit{
 		this.getSpecificAilment(1922).setFake("Landslide Stance", null, Ailment.Emotes.BUFF_INVISIBLE.get());
 		switch(ret.getId()) {
 			case 5478: //S1
+			case 11270: //S1 LD Board
 				ret.addStaticHit("Disabled when 「**" + super.getSpecificAilment(1333).getName() + "**」 is active", 0);
 				ret.removeAilmentById(1130);
 				ret.fixRemoveDispels();
@@ -81,9 +87,11 @@ public class Gau extends Unit{
 				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1332).getName() + "**」 is active", 0);
 				break;
 			case 6764: //S1 Counter
+			case 11271: //S1 Counter LD Board
 				ret.setName("Lifeshaver Counter");
 				break;
 			case 5484: //S2
+			case 11273: //S1 LD Board
 				ret.addStaticHit("Disabled when 「**" + super.getSpecificAilment(1332).getName() + "**」 is active", 0);
 				ret.removeAilmentById(1131);
 				ret.fixRemoveDispels();
@@ -97,9 +105,11 @@ public class Gau extends Unit{
 				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1333).getName() + "**」 is active", 0);
 				break;
 			case 6765: //S2 Counter
+			case 11274: //S2 Counter LD Board
 				ret.setName("Cat Scratch Counter");
 				break;
 			case 10055: //LD
+			case 11275: //LD Board
 				ret.fixRemoveDispels();
 				ret.addEffectHit(Ability.Details.Hit_Data.EffectType.E37, Ability.Details.Hit_Data.Target.Self, 0, 1332);
 				ret.addEffectHit(Ability.Details.Hit_Data.EffectType.E37, Ability.Details.Hit_Data.Target.Self, 0, 1333);
@@ -112,9 +122,10 @@ public class Gau extends Unit{
 				break;
 			case 10176: //LD BRV
 			case 10177: //LD HP
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1922).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1897).getName() + "**」 is active", 0);
 				break;
-			case 11276: //LD Counter
+			case 10203: //LD Counter
+			case 11276: //LD Counter LD Board
 				ret.setName("Landslide Counter");
 				break;
 		}
