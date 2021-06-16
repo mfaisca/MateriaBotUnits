@@ -13,7 +13,7 @@ public class Strago extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -59,7 +59,7 @@ public class Strago extends Unit{
 			case 6392: //S2
 			case 9832: //EX
 			case 9834: //LD
-				ret.addStaticHit("Cast this ability again if 「**" + this.getSpecificAilment(1252).getName() + "**」 is active");
+				ret.addStaticHit("Cast this ability again if ?**" + this.getSpecificAilment(1252).getName() + "**」 is active");
 				break;
 		}
 		return ret;

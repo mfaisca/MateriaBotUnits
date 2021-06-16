@@ -15,7 +15,7 @@ public class EaldNarche extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -65,7 +65,7 @@ public class EaldNarche extends Unit{
 			case 8573: //EX
 				Ailment ail = this.getSpecificAilment(1504);
 				ail.setName("Exoplates");
-				ret.addStaticHit("Enabled when 「**" + ail.getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + ail.getName() + "**」 is active", 0);
 				break;
 			case 8574: //EX+
 				ret.removeAilmentById(1626);

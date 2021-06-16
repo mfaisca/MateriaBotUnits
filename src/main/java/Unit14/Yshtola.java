@@ -13,7 +13,7 @@ public class Yshtola extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -77,7 +77,7 @@ public class Yshtola extends Unit{
 				ret.getAilmentById(1146).setRank(0);
 				ret.fixMissingAuraAilment(1146, 311, Ailment.EffectType.E5, Ailment.Target.Party); break;
 			case 11805:
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(2464).getName() + "**」 has 3 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(2464).getName() + "**」 has 3 stacks", 0);
 				break;
 			case 11657:
 				ret.fixMissingAuraAilment(2465, 1032, null, Ailment.Target.Party);
@@ -96,7 +96,7 @@ public class Yshtola extends Unit{
 			ret.removeHitDataById(12169);
 			switch(region) {
 				case "JP":
-					ret.addStaticHit("Increases 「**ブラッドリリー**」 stacks by 1");
+					ret.addStaticHit("Increases ?**ブラッドリリー**」 stacks by 1");
 					ret.getDetails().getHits().get(ret.getDetails().getHits().size()-1).setId(12169);
 					break;
 				case "GL":

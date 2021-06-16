@@ -13,7 +13,7 @@ public class Fang extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -84,7 +84,7 @@ public class Fang extends Unit{
 				}
 				break;
 			case 5111: //EX+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1062).getName() + "**」 has 5 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1062).getName() + "**」 has 5 stacks", 0);
 			case 5110: //EX
 				ret.fixMissingAuraAilment(1062, 265, Ailment.EffectType.E3, Ailment.Target.AoE);
 				ret.addStaticHit("+50% BRV Damage when attacking a broken target", 0);

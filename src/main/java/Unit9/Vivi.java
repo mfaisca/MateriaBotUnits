@@ -16,7 +16,7 @@ public class Vivi extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -68,20 +68,20 @@ public class Vivi extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 9295: //S2 JP
-				if(ret.getDetails().getHits().stream().noneMatch(h -> h.getType().equals(Type.BRV))) {
-					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, Type.BRV, Target.ST, 90, 180);
-					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, Type.BRV, Target.ST, 90, 180);
-					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, Type.BRV, Target.ST, 90, 180);
-					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, Type.BRV, Target.ST, 90, 180);
-					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, Type.HP, Target.ST);
+				if(ret.getDetails().getHits().stream().noneMatch(h -> h.getType().equals(AttackName.BRV))) {
+					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, AttackName.BRV, Target.ST, 90, 180);
+					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, AttackName.BRV, Target.ST, 90, 180);
+					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, AttackName.BRV, Target.ST, 90, 180);
+					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, AttackName.BRV, Target.ST, 90, 180);
+					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, AttackName.HP, Target.ST);
 				}
 				break;
 			case 9276: //EX
 				if(ret.getAilmentById(832).getEffects().stream().noneMatch(eg -> eg.fakeDesc != null))
-					ret.getAilmentById(832).getEffects().add(new Ailment.EffectGrouping("Enables 「**Double Fire**」"));
+					ret.getAilmentById(832).getEffects().add(new Ailment.EffectGrouping("Enables ?**Double Fire**」"));
 				break;
 			case 9287: //EX HP+ JP
-				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Dispels 「**Double Black Magic**」");
+				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Dispels ?**Double Black Magic**」");
 				if(!ret.getDetails().getHits().contains(adh)) {
 					ret.getDetails().getHits().addAll(ret.getDetails().getHits());
 					ret.getDetails().getHits().add(0, adh);

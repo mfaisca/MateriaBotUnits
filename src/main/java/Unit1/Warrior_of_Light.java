@@ -13,7 +13,7 @@ public class Warrior_of_Light extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -57,11 +57,11 @@ public class Warrior_of_Light extends Unit{
 		switch(ret.getId()) {
 			case 10025: //BRV+ JP
 			case 10027: //HP+ JP
-				ret.addStaticHit("Enabled when 1+ 「**" + super.getSpecificAilment(330).getName() + "**」 is active on party", 0);
+				ret.addStaticHit("Enabled when 1+ ?**" + super.getSpecificAilment(330).getName() + "**」 is active on party", 0);
 				break;
 			case 10026: //BRV+ JP
 			case 10028: //HP+ JP
-				ret.addStaticHit("Enabled when 3 「**" + super.getSpecificAilment(330).getName() + "**」 are active on party", 0);
+				ret.addStaticHit("Enabled when 3 ?**" + super.getSpecificAilment(330).getName() + "**」 are active on party", 0);
 				break;
 			case 10024: //S1 JP
 			case 10030: //S2 JP

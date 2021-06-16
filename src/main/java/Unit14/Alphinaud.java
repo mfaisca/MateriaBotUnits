@@ -13,7 +13,7 @@ public class Alphinaud extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -62,7 +62,7 @@ public class Alphinaud extends Unit{
 				if(!ret.getDetails().getAilments().contains(ailMS)) {
 					ret.getDetails().getAilments().add(ailMS);
 					ret.getDetails().getAilments().remove(ailMC);
-					//ret.getDetails().getAilments().add(new Ailment(Ailment.Emotes.BUFF_INVISIBLE.get(), "Filler", "「**" + super.getSpecificAilment(939).getName() + "**」" + System.lineSeparator() + "is now readable"));
+					//ret.getDetails().getAilments().add(new Ailment(Ailment.Emotes.BUFF_INVISIBLE.get(), "Filler", "?**" + super.getSpecificAilment(939).getName() + "**」" + System.lineSeparator() + "is now readable"));
 					ret.getDetails().getAilments().add(ailMC);
 				}
 				ret.fixMissingAuraAilment(939, 158, Ailment.EffectType.E5, Ailment.Target.Party);
@@ -72,7 +72,7 @@ public class Alphinaud extends Unit{
 				ret.addStaticAilmentEffect(ailMC.getId(), "If **Cur BRV < Int BRV**     -> __BRV Regen (100% IBRV)__");
 				ret.addStaticAilmentEffect(ailMC.getId(), "If **Cur BRV > Int BRV &** ");
 				ret.addStaticAilmentEffect(ailMC.getId(), "  **Cur BRV < 80% Max BRV**  -> __Party BRV Regen (50% IBRV)__");
-				ret.addStaticAilmentEffect(ailMC.getId(), "If **Cur BRV > 80% Max BRV** -> __Grant 「**" + super.getSpecificAilment(531).getName() + "**」__");
+				ret.addStaticAilmentEffect(ailMC.getId(), "If **Cur BRV > 80% Max BRV** -> __Grant ?**" + super.getSpecificAilment(531).getName() + "**」__");
 				break;
 			case 4654: //AA
 				ret.fixMissingAuraAilment(1009, 217, Ailment.EffectType.E8, Ailment.Target.Party);
@@ -81,7 +81,7 @@ public class Alphinaud extends Unit{
 			case 8424: //EX
 				Ailment ailOS = this.getSpecificAilment(1545);
 				ret.fixMissingAuraAilment(1543, 601, Ailment.EffectType.E3, Ailment.Target.AoE);
-				ret.addStaticAilmentEffect(1474, "Grant 「**" + super.getSpecificAilment(1545).getName() + "**」 at start of turn");
+				ret.addStaticAilmentEffect(1474, "Grant ?**" + super.getSpecificAilment(1545).getName() + "**」 at start of turn");
 				if(!ret.getDetails().getAilments().contains(ailOS))
 					ret.getDetails().getAilments().add(ailOS);
 				ailOS.getEffects().get(1).effectId = Ailment.EffectType.E65.getId();

@@ -13,7 +13,7 @@ public class Garland extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) { 
 			case BRV:

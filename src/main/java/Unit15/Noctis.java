@@ -12,7 +12,7 @@ public class Noctis extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -50,25 +50,25 @@ public class Noctis extends Unit{
 			case 9450:
 			case 9451: //Follow Up
 				ret.getDetails().setMovementCost(30);
-				ret.addStaticHit("Triggers after attacking if target has 「**" + super.getSpecificAilment(512).getName() + "**」", 0);
+				ret.addStaticHit("Triggers after attacking if target has ?**" + super.getSpecificAilment(512).getName() + "**」", 0);
 				break;
 			case 4326: //BRV
 			case 4328: //HP
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(358).getName() + "**」 has 5 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(358).getName() + "**」 has 5 stacks", 0);
 				break;
 			case 4316: //S1+ GL
 			case 9324: //S1+ JP
 				ret.removeHitDataById(688);
-				ret.addStaticHit("Enabled after using 「**" + super.getSpecificAbility(4315).getName() + "**」 for 1 use", 0);
+				ret.addStaticHit("Enabled after using ?**" + super.getSpecificAbility(4315).getName() + "**」 for 1 use", 0);
 				break;
 			case 4324: //S2+ GL
 			case 9332: //S2+ JP
 				ret.removeHitDataById(689);
 				ret.getAilmentById(358).setRank(-1);
-				ret.addStaticHit("Enabled after using 「**" + super.getSpecificAbility(4323).getName() + "**」 for 1 use", 0);
+				ret.addStaticHit("Enabled after using ?**" + super.getSpecificAbility(4323).getName() + "**」 for 1 use", 0);
 				break;
 			case 7302: //EX+
-				ret.addStaticHit("Enabled if target is afflicted with 「**" + super.getSpecificAilment(512).getName() + "**」", 0);
+				ret.addStaticHit("Enabled if target is afflicted with ?**" + super.getSpecificAilment(512).getName() + "**」", 0);
 			case 7300: //EX
 			case 9284: //LD
 				ret.getAilmentById(358).setRank(-1);
@@ -79,8 +79,8 @@ public class Noctis extends Unit{
 				ret.setName("Moratta");
 				break;
 			case 4068: //AA
-				ret.addStaticHit("Turns 「**" + super.getSpecificAbility(4315).getName() + "**」 to 「**" + super.getSpecificAbility(4316).getName() + "**」");
-				ret.addStaticHit("Turns 「**" + super.getSpecificAbility(4323).getName() + "**」 to 「**" + super.getSpecificAbility(4324).getName() + "**」");
+				ret.addStaticHit("Turns ?**" + super.getSpecificAbility(4315).getName() + "**」 to ?**" + super.getSpecificAbility(4316).getName() + "**」");
+				ret.addStaticHit("Turns ?**" + super.getSpecificAbility(4323).getName() + "**」 to ?**" + super.getSpecificAbility(4324).getName() + "**」");
 				break;
 		}
 		return ret;

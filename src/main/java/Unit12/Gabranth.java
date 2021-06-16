@@ -13,7 +13,7 @@ public class Gabranth extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -61,16 +61,16 @@ public class Gabranth extends Unit{
 		switch(ret.getId()) {
 			case 9134: //EX
 				ret.removeHitDataById(5311);
-				ret.addStaticHit("100% chance to BREAK target if 「**" + this.getSpecificAilment(1583).getName() + "**」 is on target", 0);
-				ret.addStaticHit("Cancels target BREAK status if 「**" + this.getSpecificAilment(1583).getName() + "**」 is on target", 0);
+				ret.addStaticHit("100% chance to BREAK target if ?**" + this.getSpecificAilment(1583).getName() + "**」 is on target", 0);
+				ret.addStaticHit("Cancels target BREAK status if ?**" + this.getSpecificAilment(1583).getName() + "**」 is on target", 0);
 				ret.removeAilmentById(161);
 				ret.fixRemoveDispels();
 				ret.getHitDataById(5862).setArguments(new Integer[] {20});
-				ret.addStaticHit("Has 50% splash instead if 「**" + this.getSpecificAilment(1583).getName() + "**」 is on target");
+				ret.addStaticHit("Has 50% splash instead if ?**" + this.getSpecificAilment(1583).getName() + "**」 is on target");
 			case 8513: //S1 GL
 			case 11663: //S1 JP
 				ret.getAilmentById(1581).removeEffect(69, 184);
-				ret.addStaticAilmentEffect(1581, "Counter All Attacks against party with 「**" + this.getSpecificAbility(10379).getName() + "**」");
+				ret.addStaticAilmentEffect(1581, "Counter All Attacks against party with ?**" + this.getSpecificAbility(10379).getName() + "**」");
 				Ailment.Aura a1 = ret.fixMissingAuraAilment(1581, 690, Ailment.EffectType.E58, Ailment.Target.Party);
 				a1.rankData[0] = a1.rankData[0].replace("-", "");
 				a1.rankData[1] = a1.rankData[1].replace("-", "");
@@ -79,12 +79,12 @@ public class Gabranth extends Unit{
 				break;
 			case 8538: //S2
 				ret.removeHitDataById(5311);
-				ret.addStaticHit("100% chance to BREAK target if 「**" + this.getSpecificAilment(1583).getName() + "**」 is on target", 0);
-				ret.addStaticHit("Cancels target BREAK status if 「**" + this.getSpecificAilment(1583).getName() + "**」 is on target", 0);
+				ret.addStaticHit("100% chance to BREAK target if ?**" + this.getSpecificAilment(1583).getName() + "**」 is on target", 0);
+				ret.addStaticHit("Cancels target BREAK status if ?**" + this.getSpecificAilment(1583).getName() + "**」 is on target", 0);
 				ret.removeAilmentById(161);
 				ret.fixRemoveDispels();
 				ret.getHitDataById(5862).setArguments(new Integer[] {20});
-				ret.addStaticHit("Has 50% splash instead if 「**" + this.getSpecificAilment(1583).getName() + "**」 is on target");
+				ret.addStaticHit("Has 50% splash instead if ?**" + this.getSpecificAilment(1583).getName() + "**」 is on target");
 				break;
 			case 8522: //AA
 				ret.getAilmentById(1730).removeEffect(1);
@@ -95,7 +95,7 @@ public class Gabranth extends Unit{
 				a.rankData[0] = a.rankData[0].replace("-", "");
 				break;
 			case 11507:
-				ret.addStaticHit("Enabled when attacking a target with 「**" + this.getSpecificAilment(1583).getName() + "**」", 1);
+				ret.addStaticHit("Enabled when attacking a target with ?**" + this.getSpecificAilment(1583).getName() + "**」", 1);
 			case 11506:
 				ret.addStaticHit("Raises BRV Damage by 50% against debuffed targets", 0); //According to Rem, no value in data
 				Ailment.Aura a2 = ret.fixMissingAuraAilment(2398, 1012, null, Ailment.Target.Party);
@@ -104,9 +104,9 @@ public class Gabranth extends Unit{
 			case 10379: //Debuff Counter
 				ret.setName("Debuff Counter");
 				ret.getDetails().setMovementCost(30);
-				ret.addStaticHit("Apply 「**" + this.getSpecificAilment(1582).getName() + "**」 on attacker");
-				ret.addStaticHit("Apply 「**" + this.getSpecificAilment(1679).getName() + "**」 on attacker");
-				ret.addStaticAilmentEffect(1582, "Turns into 「**" + this.getSpecificAilment(1583).getName() + "**」 with 4 or more debuffs");
+				ret.addStaticHit("Apply ?**" + this.getSpecificAilment(1582).getName() + "**」 on attacker");
+				ret.addStaticHit("Apply ?**" + this.getSpecificAilment(1679).getName() + "**」 on attacker");
+				ret.addStaticAilmentEffect(1582, "Turns into ?**" + this.getSpecificAilment(1583).getName() + "**」 with 4 or more debuffs");
 				ret.removeAilmentById(1583);
 				if(ret.getAilmentById(1583) == null)
 					ret.getDetails().getAilments().add(1, this.getSpecificAilment(1583));
@@ -131,7 +131,7 @@ public class Gabranth extends Unit{
 			fi.getEffects().add(new Ailment.EffectGrouping(32));
 			fi.getEffects().get(0).val_specify = -40;
 			fi.getEffects().get(1).val_specify = 80;
-			fi.getEffects().add(new Ailment.EffectGrouping("Turns into 「**" + this.getSpecificAilment(1582).getName() + "**」 with 3 or less debuffs"));
+			fi.getEffects().add(new Ailment.EffectGrouping("Turns into ?**" + this.getSpecificAilment(1582).getName() + "**」 with 3 or less debuffs"));
 			this.getAilments().put(1583, fi);
 			ret = fi;
 		}

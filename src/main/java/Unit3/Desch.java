@@ -13,7 +13,7 @@ public class Desch extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -81,7 +81,7 @@ public class Desch extends Unit{
 				break;
 			case 8534:
 				ret.addStaticHit("Activates only at end of enemy turn.");
-				ret.addStaticHit("「**" + ret.getAilmentById(7).getName() + "**」 is only applied if 「**" + ret.getAilmentById(1797).getName() + "**」 fails.");
+				ret.addStaticHit("?**" + ret.getAilmentById(7).getName() + "**」 is only applied if ?**" + ret.getAilmentById(1797).getName() + "**」 fails.");
 				break;
 		}
 		return ret;

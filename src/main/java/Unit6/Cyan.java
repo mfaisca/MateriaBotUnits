@@ -13,7 +13,7 @@ public class Cyan extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -60,7 +60,7 @@ public class Cyan extends Unit{
 				break;
 			case 8180: //S1+
 			case 8184: //S2+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(192).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(192).getName() + "**」 is active", 0);
 				break;
 			case 8391: //EX+
 				ret.addStaticHit("Enabled when HP >= 80% Max HP", 0);

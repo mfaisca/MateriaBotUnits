@@ -13,7 +13,7 @@ public class Quistis extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,7 +56,7 @@ public class Quistis extends Unit{
 		switch(ret.getId()) {
 			case 8844: //BRV
 			case 8845: //HP
-				ret.addStaticHit("Enabled for 6 turns after using 「**Laser Whip**」");
+				ret.addStaticHit("Enabled for 6 turns after using ?**Laser Whip**」");
 				break;
 			case 8729:
 				ret.fixMissingAuraAilment(1637, 673, Ailment.EffectType.E67, Ailment.Target.Party);

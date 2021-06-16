@@ -12,7 +12,7 @@ public class Vayne extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -72,7 +72,7 @@ public class Vayne extends Unit{
 			case 3973:
 			case 3949:
 			case 7034:
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(conqueror.getId()).getName() + "**」 has 3 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(conqueror.getId()).getName() + "**」 has 3 stacks", 0);
 				break;
 			case 3964: //S2
 				ret.fixMissingAuraAilment(924, 140, Ailment.EffectType.E1, Ailment.Target.Party);

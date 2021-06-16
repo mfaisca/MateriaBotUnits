@@ -13,7 +13,7 @@ public class Cinque extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,7 +56,7 @@ public class Cinque extends Unit{
 		switch(ret.getId()) {
 			case 3985: //S1+
 			case 3993: //S2+
-				ret.addStaticHit("Enabled when enemies have a total of 5+ stacks of 「**" + super.getSpecificAilment(927).getName() + "**」", 0);
+				ret.addStaticHit("Enabled when enemies have a total of 5+ stacks of ?**" + super.getSpecificAilment(927).getName() + "**」", 0);
 				break;
 			case 7811: //EX
 				ret.fixDelayHitData(5126);

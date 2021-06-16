@@ -13,7 +13,7 @@ public class Ardyn extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -83,7 +83,7 @@ public class Ardyn extends Unit{
 	@Override
 	public Passive getSpecificPassive(Passive p) {
 		if(p.getLevel() == 50)
-			p.setManualDescription("Raises ATK, DEF, Int BRV, Max BRV by 10% when 「**Spectral Charge**」 is at least 3 stacks");
+			p.setManualDescription("Raises ATK, DEF, Int BRV, Max BRV by 10% when ?**Spectral Charge**」 is at least 3 stacks");
 		return p;
 	}
 }

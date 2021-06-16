@@ -13,7 +13,7 @@ public class Xande extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -61,7 +61,7 @@ public class Xande extends Unit{
 				ret.addStaticAilmentEffect(1923, "Each effect is unlocked depending on stacks", 0);
 				break;
 			case 10255: //S2+
-				ret.addStaticHit("Enabled when 「**" + getSpecificAilment(1923).getName() + "**」 has 3+ stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + getSpecificAilment(1923).getName() + "**」 has 3+ stacks", 0);
 				break;
 			case 10259: //EX
 				ret.getAilmentById(1925).setRank(-1);

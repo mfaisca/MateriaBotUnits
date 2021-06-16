@@ -13,7 +13,7 @@ public class Yda extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -62,7 +62,7 @@ public class Yda extends Unit{
 			case 4624: //S1+
 				ret.getHitDataById(3755).getArguments()[1] = 1565;
 				ret.removeHitDataById(5333);
-				ret.addStaticHit("Enabled after using 「**BRV++**」 or 「**HP++**」 for 1 use", 0);
+				ret.addStaticHit("Enabled after using ?**BRV++**」 or ?**HP++**」 for 1 use", 0);
 				Ailment gs = getSpecificAilment(1565);
 				if(!ret.getDetails().getAilments().contains(gs)) {
 					ret.getDetails().getAilments().add(gs);
@@ -70,7 +70,7 @@ public class Yda extends Unit{
 				}
 				break;
 			case 8268: //EX
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1565).getName() + "**」 has 1 stack", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1565).getName() + "**」 has 1 stack", 0);
 				break;
 		}
 		return ret;

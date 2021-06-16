@@ -12,7 +12,7 @@ public class Kuja extends Unit{
 	}
 
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -85,7 +85,7 @@ public class Kuja extends Unit{
 				ret.getAilmentById(723).getAuras().get(74).ailmentEffect = Ailment.EffectType.E3.getId();
 				ret.getAilmentById(723).getAuras().get(74).target = Ailment.Target.Party.getId();
 				if(ret.getAilmentById(723).getEffects().stream().noneMatch(eg -> eg.fakeDesc != null))
-					ret.getAilmentById(723).getEffects().add(new Ailment.EffectGrouping("「**Soul Cleave**」 is not dispelled when using + skills"));
+					ret.getAilmentById(723).getEffects().add(new Ailment.EffectGrouping("?**Soul Cleave**」 is not dispelled when using + skills"));
 				break;
 			case 9472: //LD
 			case 11836: //LD

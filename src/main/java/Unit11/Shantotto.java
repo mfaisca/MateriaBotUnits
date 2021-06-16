@@ -12,7 +12,7 @@ public class Shantotto extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,15 +56,15 @@ public class Shantotto extends Unit{
 		super.getSpecificAilment(1688).setName("Rage");
 		switch(ret.getId()) {
 			case 9160: //LD
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(9218).getName() + "**」 for 8 turns", 0);
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(9218).getName() + "**」 for 8 turns", 0);
 			case 9159: 
 				ret.removeHitDataById(9615);
 				break;
 			case 9218: //HP++++
-				ret.addStaticHit("Enabled after using 「**" + super.getSpecificAbility(9160).getName() + "**」 for 8 turns", 0);
+				ret.addStaticHit("Enabled after using ?**" + super.getSpecificAbility(9160).getName() + "**」 for 8 turns", 0);
 			case 4060:
 			case 4064:
-				ret.addStaticHit("+20% BRV Damage against enemies with 「**" + super.getSpecificAilment(508).getName() + "**」", 0);
+				ret.addStaticHit("+20% BRV Damage against enemies with ?**" + super.getSpecificAilment(508).getName() + "**」", 0);
 				break;
 			case 6691:
 				ret.getAilmentById(1323).getEffects().clear();

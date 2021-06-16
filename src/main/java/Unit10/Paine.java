@@ -13,7 +13,7 @@ public class Paine extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -71,7 +71,7 @@ public class Paine extends Unit{
 				ret.getAilmentById(968).getEffects().get(1).rankData = new String[] {"", "20"};
 				break;
 			case 4265:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(880).getName() + "**」 has 5 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(880).getName() + "**」 has 5 stacks", 0);
 				ret.getAilmentById(918).getEffects().clear();
 				ret.addStaticAilmentEffect(918, "+30% party ATK/DEF");
 				ret.addStaticAilmentEffect(918, "+30% party Int BRV/Max BRV");

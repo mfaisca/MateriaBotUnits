@@ -13,7 +13,7 @@ public class Aerith extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) { //43 54
+	public List<Ability> getAbility(Ability.AttackName type, String region) { //43 54
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -74,7 +74,7 @@ public class Aerith extends Unit{
 				ret.fixMissingAuraAilment(2426, 1017, null, Ailment.Target.AoE);
 				ret.fixMissingAuraAilment(2426, 1018, null, Ailment.Target.AoE);
 				ret.fixMissingAuraAilment(2426, 1019, null, Ailment.Target.AoE);
-				ret.addStaticAilmentEffect(2426, "Triggers 「**" + this.getSpecificAbility(11660).getName() + "**」 after attacking");
+				ret.addStaticAilmentEffect(2426, "Triggers ?**" + this.getSpecificAbility(11660).getName() + "**」 after attacking");
 				break;
 			case 11660:
 				ret.getDetails().setMovementCost(30);

@@ -9,11 +9,11 @@ import org.plugface.core.annotations.Plugin;
 @Plugin(name = "Unit.Cecil")
 public class Cecil extends Unit{
 	public Cecil() {
-		super("Cecil", "decil", "dencil", "dark cecil", "cecil dark", "dkc");
+		super("Cecil", "decil", "dencil", "dark cecil", "cecil dark", "dkc", "dcecil", "cecild");
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:

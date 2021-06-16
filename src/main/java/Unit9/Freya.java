@@ -15,7 +15,7 @@ public class Freya extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -57,11 +57,11 @@ public class Freya extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 7973: //S1
-				if(ret.getDetails().getHits().stream().noneMatch(h -> h.getType().equals(Ability.Details.Hit_Data.Type.BRV))) {
+				if(ret.getDetails().getHits().stream().noneMatch(h -> h.getType().equals(Ability.Details.Hit_Data.AttackName.BRV))) {
 					ret.getDetails().setChaseDmg(3);
-					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Ranged, Type.BRV, Target.ST, 100, 120);
-					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Ranged, Type.BRV, Target.ST, 100, 120);
-					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Ranged, Type.HP, Target.ST);
+					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Ranged, AttackName.BRV, Target.ST, 100, 120);
+					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Ranged, AttackName.BRV, Target.ST, 100, 120);
+					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Ranged, AttackName.HP, Target.ST);
 					ret.getAilmentById(862).getAuras().get(122).ailmentEffect = Ailment.EffectType.E7.getId();
 					ret.getAilmentById(862).getAuras().get(122).target = Ailment.Target.Party.getId();
 				}break;

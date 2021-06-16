@@ -13,7 +13,7 @@ public class Ciaran extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -85,7 +85,7 @@ public class Ciaran extends Unit{
 		}
 		switch(ret.getId()) {
 			case 6993: //HP++
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1996).getName() + "**」 has 1 stack", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1996).getName() + "**」 has 1 stack", 0);
 				break;
 			case 6994: //HP+++
 			case 6988: //S2+
@@ -100,7 +100,7 @@ public class Ciaran extends Unit{
 					;
 				else
 					;//ret.getHitDataById(7760).getArguments()[1] = 1996;
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1996).getName() + "**」 has 5 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1996).getName() + "**」 has 5 stacks", 0);
 				break;
 			case 5465: //S1
 				ret.fixMissingAuraAilment(1124, 301, Ailment.EffectType.E1, Ailment.Target.Party);

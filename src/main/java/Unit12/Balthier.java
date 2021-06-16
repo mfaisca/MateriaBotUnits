@@ -13,7 +13,7 @@ public class Balthier extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,7 +56,7 @@ public class Balthier extends Unit{
 		switch(ret.getId()) {
 			case 4095:
 			case 4100:
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(945).getName() + "**」 has 3 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(945).getName() + "**」 has 3 stacks", 0);
 			case 4094:
 			case 4099:
 				if(ret.getDetails().getAilments().size() > 1) {

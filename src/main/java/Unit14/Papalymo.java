@@ -13,7 +13,7 @@ public class Papalymo extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -58,14 +58,14 @@ public class Papalymo extends Unit{
 		switch(ret.getId()) {
 			case 7325:
 			case 7326:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(178).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(178).getName() + "**」 is active", 0);
 				break;
 			case 7327:
 			case 7319:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(181).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(181).getName() + "**」 is active", 0);
 				break;
 			case 7081: //S2+
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(178).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(178).getName() + "**」 is active", 0);
 			case 7085: //EX+Fire
 			case 7086: //EX+Ice
 			case 7087: //Foul

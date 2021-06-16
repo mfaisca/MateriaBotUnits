@@ -12,7 +12,7 @@ public class Vaan extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -54,18 +54,18 @@ public class Vaan extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 4973: //S1
-                ret.addStaticHit("Trigger 「**" + super.getSpecificAbility(4970).getName() + "**」 on target after using this ability once", 1);
+                ret.addStaticHit("Trigger ?**" + super.getSpecificAbility(4970).getName() + "**」 on target after using this ability once", 1);
                 break;
 			case 4975: //S1+
                 ret.addStaticHit("Enabled after using this ability 5 times", 1);
-                ret.addStaticHit("Trigger 「**" + super.getSpecificAbility(4972).getName() + "**」 on target after using this ability once", 1);
+                ret.addStaticHit("Trigger ?**" + super.getSpecificAbility(4972).getName() + "**」 on target after using this ability once", 1);
                 break;
 			case 4976: //S2
-                ret.addStaticHit("Trigger 「**" + super.getSpecificAbility(4983).getName() + "**」 on target after using this ability once", 1);
+                ret.addStaticHit("Trigger ?**" + super.getSpecificAbility(4983).getName() + "**」 on target after using this ability once", 1);
                 break;
 			case 4979: //S2+
                 ret.addStaticHit("Enabled after using this ability 5 times", 1);
-                ret.addStaticHit("Trigger 「**" + super.getSpecificAbility(4985).getName() + "**」 on target after using this ability once", 1);
+                ret.addStaticHit("Trigger ?**" + super.getSpecificAbility(4985).getName() + "**」 on target after using this ability once", 1);
                 break;
 			case 9112:
 				ret.getAilmentById(1601).setCastId(463);

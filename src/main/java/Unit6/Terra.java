@@ -12,7 +12,7 @@ public class Terra extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -77,14 +77,14 @@ public class Terra extends Unit{
 				ret.fixMergeAbility(4417);
 				break;
 			case 4444:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(982).getName() + "**」 has 5+ stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(982).getName() + "**」 has 5+ stacks", 0);
 				ret.getHitDataById(5060).getEffect().setEffectValueType(Ability.Details.Hit_Data.BasedOnStat.Stat5.getId());
 				ret.fixMergeAbility(4418); break;
 			case 11932:
 				ret.getHitDataById(5060).getEffect().setEffectValueType(Ability.Details.Hit_Data.BasedOnStat.Stat5.getId());
 				ret.fixMergeAbility(12188); break;
 			case 11933:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(982).getName() + "**」 has 5+ stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(982).getName() + "**」 has 5+ stacks", 0);
 				ret.getHitDataById(5060).getEffect().setEffectValueType(Ability.Details.Hit_Data.BasedOnStat.Stat5.getId());
 				ret.fixMergeAbility(12189); break;
 			case 4423:
@@ -94,7 +94,7 @@ public class Terra extends Unit{
 			case 4446:
 				ret.fixRemoveDispels();
 				ret.getHitDataById(5069).getEffect().setEffectValueType(Ability.Details.Hit_Data.BasedOnStat.Stat5.getId());
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(982).getName() + "**」 has 5+ stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(982).getName() + "**」 has 5+ stacks", 0);
 				ret.fixMergeAbility(4425); break;
 			case 11936:
 				ret.fixRemoveDispels();
@@ -103,11 +103,11 @@ public class Terra extends Unit{
 			case 11937:
 				ret.fixRemoveDispels();
 				ret.getHitDataById(5069).getEffect().setEffectValueType(Ability.Details.Hit_Data.BasedOnStat.Stat5.getId());
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(982).getName() + "**」 has 5+ stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(982).getName() + "**」 has 5+ stacks", 0);
 				ret.fixMergeAbility(12193); break;
 			case 6769:
 				ret.fixRemoveDispels();
-				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(6575).getName() + "**」 for 1 use");
+				ret.addStaticHit("Enabled after using ?**" + this.getSpecificAbility(6575).getName() + "**」 for 1 use");
 				break;
 			case 11863:
 				ret.fixMissingAuraAilment(2507, 1088, null, Ailment.Target.Party);

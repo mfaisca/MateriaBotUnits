@@ -9,11 +9,11 @@ import org.plugface.core.annotations.Plugin;
 @Plugin(name = "Unit.Ashe")
 public class Ashe extends Unit{
 	public Ashe() {
-		super("Ashe");
+		super("Ashe", "ashelia", "amalia", "ashelia b'nargin dalmasca", "ashelia bnargin dalmasca");
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -59,7 +59,7 @@ public class Ashe extends Unit{
 				ret.fixMissingAuraAilment(1285, 430, Ailment.EffectType.E67, Ailment.Target.Party);
 				break;
 			case 7363:
-				ret.addStaticHit("Trigger 「**" + super.getSpecificAbility(7364).getName() + "**」 after this ability", 0);
+				ret.addStaticHit("Trigger ?**" + super.getSpecificAbility(7364).getName() + "**」 after this ability", 0);
 				break;
 		}
 		return ret;

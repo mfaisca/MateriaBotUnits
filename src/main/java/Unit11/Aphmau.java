@@ -13,7 +13,7 @@ public class Aphmau extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,15 +56,15 @@ public class Aphmau extends Unit{
 		switch(ret.getId()) {
 			case 8448: //EX+HP+
 			case 8449: //EX+BRV+
-				ret.addStaticHit("Enabled when 「**" + getSpecificAilment(1520).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + getSpecificAilment(1520).getName() + "**」 is active", 0);
 			case 8463: //S1
 			case 8465: //S2
 				ret.fixMissingAuraAilment(1038, 239, Ailment.EffectType.E8, Ailment.Target.Party);
 				break;
 			case 8615: //EX
 				ret.fixMissingAuraAilment(1574, 583, Ailment.EffectType.E4, Ailment.Target.Party);
-				ret.addStaticAilmentEffect(1520, "Enables 「**" + getSpecificAbility(8448).getName() + "**」");
-				ret.addStaticAilmentEffect(1520, "Enables 「**" + getSpecificAbility(8449).getName() + "**」");
+				ret.addStaticAilmentEffect(1520, "Enables ?**" + getSpecificAbility(8448).getName() + "**」");
+				ret.addStaticAilmentEffect(1520, "Enables ?**" + getSpecificAbility(8449).getName() + "**」");
 				break;
 		}
 		return ret;

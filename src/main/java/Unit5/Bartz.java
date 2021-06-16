@@ -13,7 +13,7 @@ public class Bartz extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -86,14 +86,14 @@ public class Bartz extends Unit{
 				break;
 			case 12616: //HP+ from LD
 				ret.fixRemoveDispels();
-				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(12614).getName() + "**」 for 1 use");
+				ret.addStaticHit("Enabled after using ?**" + this.getSpecificAbility(12614).getName() + "**」 for 1 use");
 				break;
 			case 12614: //LD
 				ret.fixMissingAuraAilment(2492, 1185, null, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(2492, 1156, null, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(2492, 1157, Ailment.EffectType.E67, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(2492, 1158, null, Ailment.Target.Party);
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(12616).getName() + "**」 for 1 use");
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(12616).getName() + "**」 for 1 use");
 				break;
 			case 12570: //BT
 				ret.fixMissingAuraAilment(2502, 1159, null, Ailment.Target.Party);

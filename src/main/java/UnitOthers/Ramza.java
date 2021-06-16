@@ -13,7 +13,7 @@ public class Ramza extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -97,33 +97,33 @@ public class Ramza extends Unit{
 				break;
 			case 8103:
 			case 11019:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(981).getName() + " I**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(981).getName() + " I**」 is active", 0);
 				break;
 			case 8104:
 			case 11020:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(981).getName() + " II**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(981).getName() + " II**」 is active", 0);
 				break;
 			case 8105:
 			case 10899:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(981).getName() + " III**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(981).getName() + " III**」 is active", 0);
 				break;
 			case 7919:
 				ret.removeHitDataById(8723);
 				ret.fixDelayHitData(8697);
 			case 8100:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(980).getName() + " I**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(980).getName() + " I**」 is active", 0);
 				break;
 			case 7920:
 				ret.removeHitDataById(8723);
 				ret.fixDelayHitData(8697);
 			case 8101:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(980).getName() + " II**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(980).getName() + " II**」 is active", 0);
 				break;
 			case 7921:
 				ret.removeHitDataById(8723);
 				ret.fixDelayHitData(8697);
 			case 8102:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(980).getName() + " III**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(980).getName() + " III**」 is active", 0);
 				break;
 		}
 		return ret;

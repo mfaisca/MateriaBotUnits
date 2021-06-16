@@ -12,7 +12,7 @@ public class Cloud extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -88,13 +88,13 @@ public class Cloud extends Unit{
 				Ability.Details.Hit_Data adh = ret.getHitDataById(689);
 				if(ret.getDetails().getHits().contains(adh))
 					ret.getDetails().getHits().remove(adh);
-				ret.addStaticHit("Enabled after using 「**Finishing Touch**」 for 1 use", 0);
+				ret.addStaticHit("Enabled after using ?**Finishing Touch**」 for 1 use", 0);
 				break;}
 			case 3590:
 			case 10550:{ //Finishing Touch
 				ret.removeAilmentById(105);
 				ret.removeAilmentById(106);
-				ret.addStaticHit("Enables 「**Cross Slash+**」 for 1 use");
+				ret.addStaticHit("Enables ?**Cross Slash+**」 for 1 use");
 				break;}
 			case 10013:
 				ret.fixMissingAuraAilment(1842, 826, null, Ailment.Target.Party);

@@ -12,7 +12,7 @@ public class Sherlotta extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -69,7 +69,7 @@ public class Sherlotta extends Unit{
 				break;
 			case 8746: //HP++
 				ret.removeHitDataById(689);
-				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(8745).getName() + "**」 for 1 use", 0);
+				ret.addStaticHit("Enabled after using ?**" + this.getSpecificAbility(8745).getName() + "**」 for 1 use", 0);
 				break;
 		}
 		return ret;

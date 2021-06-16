@@ -13,7 +13,7 @@ public class Eight extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -53,7 +53,7 @@ public class Eight extends Unit{
 			case 6292:
 			case 10110:
 				ret.fixRemoveDispels();
-				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(10051).getName() + "**」", 0);
+				ret.addStaticHit("Enabled after using ?**" + this.getSpecificAbility(10051).getName() + "**」", 0);
 				break;
 			case 6302:
 				ret.setName("Breaksight Blow");

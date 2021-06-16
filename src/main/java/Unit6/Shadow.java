@@ -13,7 +13,7 @@ public class Shadow extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -55,7 +55,7 @@ public class Shadow extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 7555: //BRV
-				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(7549).getName() + "**」 against broken target", 0);
+				ret.addStaticHit("Enabled after using ?**" + this.getSpecificAbility(7549).getName() + "**」 against broken target", 0);
 				break;
 			case 7720: //EX
 				ret.getAilmentById(1457).setName("Intercept");

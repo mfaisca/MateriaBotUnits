@@ -13,7 +13,7 @@ public class Ignis extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,11 +56,11 @@ public class Ignis extends Unit{
 		switch(ret.getId()) {
 			case 6670:
 			case 6671:
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1270).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1270).getName() + "**」 is active", 0);
 				break;
 			case 6672:
 			case 6673:
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1271).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1271).getName() + "**」 is active", 0);
 				break;
 			case 5932: //S1
 				ret.removeHitDataById(7180);

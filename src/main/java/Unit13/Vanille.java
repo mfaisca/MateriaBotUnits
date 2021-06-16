@@ -13,7 +13,7 @@ public class Vanille extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -62,7 +62,7 @@ public class Vanille extends Unit{
 			case 6096:
 				ret.fixRemoveDispels();
 				ret.getAilmentById(411).removeEffect(53);
-				ret.addStaticAilmentEffect(411, "Trigger 「**" + getSpecificAbility(3467).getName() + "**」 on expiration");
+				ret.addStaticAilmentEffect(411, "Trigger ?**" + getSpecificAbility(3467).getName() + "**」 on expiration");
 				break;
 			case 6106: //AA
 				ret.fixMissingAuraAilment(1212, 364, Ailment.EffectType.E1, Ailment.Target.Party);

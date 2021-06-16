@@ -13,7 +13,7 @@ public class LannReynn extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -58,7 +58,7 @@ public class LannReynn extends Unit{
 				if(!ret.getName().contains("+"))
 					ret.setName(ret.getName() + "+");
 			case 6839:
-				ret.addStaticHit("Enabled when both 「**" + super.getSpecificAilment(902).getName() + "**」 and 「**" + super.getSpecificAilment(905).getName() + "**」 are active", 0);
+				ret.addStaticHit("Enabled when both ?**" + super.getSpecificAilment(902).getName() + "**」 and ?**" + super.getSpecificAilment(905).getName() + "**」 are active", 0);
 				break;
 			case 6843:
 				ret.removeAilmentById(161);

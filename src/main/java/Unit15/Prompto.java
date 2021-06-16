@@ -12,7 +12,7 @@ public class Prompto extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -54,14 +54,14 @@ public class Prompto extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 7998:
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(8317).getName() + "**」 for 1 turn");
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(8320).getName() + "**」 for 1 turn");
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(8317).getName() + "**」 for 1 turn");
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(8320).getName() + "**」 for 1 turn");
 				ret.fixMissingAuraAilment(1011, 208, Ailment.EffectType.E1, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1011, 207, Ailment.EffectType.E5, Ailment.Target.Party);
 				break;
 			case 8317:
 			case 8320:
-				ret.addStaticHit("Enabled after using 「**" + super.getSpecificAbility(7998).getName() + "**」 for 1 turn", 0);
+				ret.addStaticHit("Enabled after using ?**" + super.getSpecificAbility(7998).getName() + "**」 for 1 turn", 0);
 				break;
 		}
 		return ret;

@@ -13,7 +13,7 @@ public class Jack extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -73,7 +73,7 @@ public class Jack extends Unit{
 			case 8001: //GL BRV
 			case 11233: //JP HP
 			case 8002: //GL HP
-				ret.addStaticHit("Triggers 「**" + this.getSpecificAbility(7925).getName() + "**」 after breaking a target");
+				ret.addStaticHit("Triggers ?**" + this.getSpecificAbility(7925).getName() + "**」 after breaking a target");
 				break;
 			case 11014: //LD
 				ret.getAilmentById(2020).setRank(-1);
@@ -84,11 +84,11 @@ public class Jack extends Unit{
 				ret.fixRemoveDispels();
 			case 7135: //S1
 				ret.fixStupidCriticalDamage(1412, 50);
-				ret.addStaticHit("Triggers 「**" + this.getSpecificAbility(7925).getName() + "**」 after attacking a broken target");
+				ret.addStaticHit("Triggers ?**" + this.getSpecificAbility(7925).getName() + "**」 after attacking a broken target");
 				break;
 			case 7924: //EX
 				ret.getAilmentById(1495).getEffects().get(1).rankData = new String[] {"000"+ret.getAilmentById(1495).getArgs()[0]};
-				ret.addStaticHit("Triggers 「**" + this.getSpecificAbility(7925).getName() + "**」 after attacking a broken target");
+				ret.addStaticHit("Triggers ?**" + this.getSpecificAbility(7925).getName() + "**」 after attacking a broken target");
 				break;
 		}
 		return ret;

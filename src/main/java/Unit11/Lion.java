@@ -13,7 +13,7 @@ public class Lion extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -55,19 +55,19 @@ public class Lion extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 4920:
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(4921).getName() + "**」 and 「**" + super.getSpecificAbility(4925).getName() + "**」 for 1 use (shared)");
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(4921).getName() + "**」 and ?**" + super.getSpecificAbility(4925).getName() + "**」 for 1 use (shared)");
 				break;
 			case 4921:
 				ret.addStaticHit("50% Bonus BRV potency", 1);
 				ret.removeHitDataById(5613);
 				ret.removeHitDataById(5724);
-				ret.addStaticHit("Reverts to 「**" + super.getSpecificAbility(4920).getName() + "**」 after use");
+				ret.addStaticHit("Reverts to ?**" + super.getSpecificAbility(4920).getName() + "**」 after use");
 				break;
 			case 4925:
 				ret.addStaticHit("50% Bonus BRV potency", 1);
 				ret.removeHitDataById(5618);
 				ret.removeHitDataById(5724);
-				ret.addStaticHit("Reverts to 「**" + super.getSpecificAbility(4924).getName() + "**」 after use");
+				ret.addStaticHit("Reverts to ?**" + super.getSpecificAbility(4924).getName() + "**」 after use");
 				break;
 			case 4928:
 				ret.fixMergeAbility(5022);

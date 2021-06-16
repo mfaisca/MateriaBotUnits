@@ -13,7 +13,7 @@ public class Wakka extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -65,9 +65,9 @@ public class Wakka extends Unit{
 				ret.fixMissingAuraAilment(1483, 572, Ailment.EffectType.E5, Ailment.Target.Party);
 				break;
 			case 11908:
-				ret.addStaticAilmentEffect(1939, "Randomly changes to another 「**" + ret.getName() + "**」 debuff at the end of turn", 0);
-				ret.addStaticAilmentEffect(1940, "Randomly changes to another 「**" + ret.getName() + "**」 debuff at the end of turn", 0);
-				ret.addStaticAilmentEffect(1941, "Randomly changes to another 「**" + ret.getName() + "**」 debuff at the end of turn", 0);
+				ret.addStaticAilmentEffect(1939, "Randomly changes to another ?**" + ret.getName() + "**」 debuff at the end of turn", 0);
+				ret.addStaticAilmentEffect(1940, "Randomly changes to another ?**" + ret.getName() + "**」 debuff at the end of turn", 0);
+				ret.addStaticAilmentEffect(1941, "Randomly changes to another ?**" + ret.getName() + "**」 debuff at the end of turn", 0);
 				break;
 		}
 		return ret;

@@ -14,7 +14,7 @@ public class Nine extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -93,7 +93,7 @@ public class Nine extends Unit{
 				if(ret.getAilmentById(1712) == null)
 					ret.getDetails().getAilments().add(this.getSpecificAilment(1712));
 				ret.getHitDataById(10054).setArguments(new Integer[] {1712});
-				ret.addStaticAilmentEffect(1701, "After taking an HP hit, transforms to 「**" + ret.getAilmentById(1712).getName() + "**」");
+				ret.addStaticAilmentEffect(1701, "After taking an HP hit, transforms to ?**" + ret.getAilmentById(1712).getName() + "**」");
 				break;
 		}
 		return ret;

@@ -13,7 +13,7 @@ public class Aranea extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -55,12 +55,12 @@ public class Aranea extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 11704: //LD+
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(1668).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(1668).getName() + "**」 is active", 0);
 				break;
 			case 8925: //S1+
 			case 8933: //S2+
 			case 8939: //EX+
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(1668).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(1668).getName() + "**」 is active", 0);
 			case 8924: //S1
 			case 8932: //S2
 			case 8938: //EX
@@ -69,7 +69,7 @@ public class Aranea extends Unit{
 			case 9288: //BRV
 			case 9289: //HP
 				if(ret.getName().contains("+"))
-					ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(1668).getName() + "**」 is active", 0);
+					ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(1668).getName() + "**」 is active", 0);
 				break;
 		}
 		return ret;

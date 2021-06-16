@@ -13,7 +13,7 @@ public class Penelo extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,19 +56,19 @@ public class Penelo extends Unit{
 		switch(ret.getId()) {
 			case 6785: //Rhumba BRV+
 			case 6787: //Rhumba HP+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1334).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1334).getName() + "**」 is active", 0);
 				break;
 			case 6786: //Rhumba BRV++
 			case 6788: //Rhumba HP++
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1334).getName() + "**」 has 3 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1334).getName() + "**」 has 3 stacks", 0);
 				break;
 			case 6791: //Waltz BRV+
 			case 6793: //Waltz HP+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1335).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1335).getName() + "**」 is active", 0);
 				break;
 			case 6792: //Waltz BRV++
 			case 6794: //Waltz HP++
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1335).getName() + "**」 has 3 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1335).getName() + "**」 has 3 stacks", 0);
 				break;
 			case 6923: //S1
 				ret.fixMissingAuraAilment(1334, 416, Ailment.EffectType.E1, Ailment.Target.Party);
@@ -81,7 +81,7 @@ public class Penelo extends Unit{
 			case 6973: //EX
 				ret.removeHitDataById(7372);
 				ret.addStaticHit("Followed by an HP attack equal to 750% of own Int BRV", 5);
-				ret.addStaticHit("Raises active 「**" + super.getSpecificAilment(1334).getName() + "**」 or 「**" + super.getSpecificAilment(1335).getName() + "**」 stacks by 1");
+				ret.addStaticHit("Raises active ?**" + super.getSpecificAilment(1334).getName() + "**」 or ?**" + super.getSpecificAilment(1335).getName() + "**」 stacks by 1");
 				break;
 			case 11035: //LD
 				ret.fixMissingAuraAilment(2009, 938, Ailment.EffectType.E4, Ailment.Target.Party);

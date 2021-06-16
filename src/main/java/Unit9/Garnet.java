@@ -12,7 +12,7 @@ public class Garnet extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -55,13 +55,13 @@ public class Garnet extends Unit{
 		switch(ret.getId()) {
 			case 8560:
 			case 8561:{
-				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enabled when 「**Water Dragon**」 is active");
+				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enabled when ?**Water Dragon**」 is active");
 				if(!ret.getDetails().getHits().contains(adh))
 					ret.getDetails().getHits().add(0, adh);
 				}break;
 			case 8564:
 			case 8565:{
-				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enabled when 「**Thunder Tsar**」 is active");
+				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enabled when ?**Thunder Tsar**」 is active");
 				if(!ret.getDetails().getHits().contains(adh))
 					ret.getDetails().getHits().add(0, adh);
 				}break;

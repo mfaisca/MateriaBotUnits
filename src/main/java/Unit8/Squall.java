@@ -12,7 +12,7 @@ public class Squall extends Unit{
 	}
 
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -89,11 +89,11 @@ public class Squall extends Unit{
 					hd.setEffect(new Ability.Details.Hit_Data.Effect(Ability.Details.Hit_Data.EffectType.E110, 1));
 					ret.getDetails().getHits().add(hd);
 					hd = new Ability.Details.Hit_Data();
-					hd.setArguments(new Integer[] {1, 100, super.getBaseAbility(Ability.Type.S1).get(0).getId()});
+					hd.setArguments(new Integer[] {1, 100, super.getBaseAbility(Ability.AttackName.S1).get(0).getId()});
 					hd.setEffect(new Ability.Details.Hit_Data.Effect(Ability.Details.Hit_Data.EffectType.E136, 1));
 					ret.getDetails().getHits().add(hd);
 					hd = new Ability.Details.Hit_Data();
-					hd.setArguments(new Integer[] {1, 100, super.getBaseAbility(Ability.Type.S2).get(0).getId()});
+					hd.setArguments(new Integer[] {1, 100, super.getBaseAbility(Ability.AttackName.S2).get(0).getId()});
 					hd.setEffect(new Ability.Details.Hit_Data.Effect(Ability.Details.Hit_Data.EffectType.E136, 1));
 					ret.getDetails().getHits().add(hd);
 				}
@@ -114,7 +114,7 @@ public class Squall extends Unit{
 				ret.addStaticAilmentEffect(1641, "+50% party HP Damage dealt when dealing HP Splash damage");
 				break;
 			case 11529: //LD Boards Followup
-				ret.addStaticHit("Triggers after attacking if 「**" + super.getSpecificAilment(1564).getName() + "**」 is active", 0);
+				ret.addStaticHit("Triggers after attacking if ?**" + super.getSpecificAilment(1564).getName() + "**」 is active", 0);
 				break;
 		}
 		return ret;

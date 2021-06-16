@@ -12,7 +12,7 @@ public class Tifa extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -91,12 +91,12 @@ public class Tifa extends Unit{
 				rankData2[6] = rankData2[5];
 				break;
 			case 12676: //LD
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(12677).getName() + "**」 for 1 turn");
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(12678).getName() + "**」 for 1 turn");
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(12677).getName() + "**」 for 1 turn");
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(12678).getName() + "**」 for 1 turn");
 				break;
 			case 12677:
 			case 12678:
-				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(12676).getName() + "**」 for 1 use __**(shared)**__", 0);
+				ret.addStaticHit("Enabled after using ?**" + this.getSpecificAbility(12676).getName() + "**」 for 1 use __**(shared)**__", 0);
 				ret.fixRemoveDispels();
 				break;
 		}

@@ -13,7 +13,7 @@ public class Lyse extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -66,7 +66,7 @@ public class Lyse extends Unit{
 				}
 				break;
 			case 5783: //EX+
-				ret.addStaticHit("Enabled when 「**" + ailCha.getName() + "**」 has 5 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + ailCha.getName() + "**」 has 5 stacks", 0);
 				ret.getAilmentById(1090).removeEffect(141, 60);
 				if(expM) {
 					expM = false;
@@ -74,14 +74,14 @@ public class Lyse extends Unit{
 				}
 				break;
 			case 5289: //BRV++
-				ret.addStaticHit("Enabled when 「**" + ailCha.getName() + "**」 has 5 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + ailCha.getName() + "**」 has 5 stacks", 0);
 				break;
 			case 5280: //S2
 				ret.fixMissingAuraAilment(1088, 278, Ailment.EffectType.E4, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1088, 279, Ailment.EffectType.E8, Ailment.Target.Party);
 				break;
 			case 5284: //S2+
-				ret.addStaticHit("Enabled when 「**" + getSpecificAilment(1088).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + getSpecificAilment(1088).getName() + "**」 is active", 0);
 				break;
 		}
 		return ret;

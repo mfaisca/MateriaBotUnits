@@ -13,7 +13,7 @@ public class Ceodore extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,7 +56,7 @@ public class Ceodore extends Unit{
 		switch(ret.getId()) {
 			case 11584:
 			case 11585:
-				ret.addStaticHit("Enabled when 「**" + getSpecificAilment(2041).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + getSpecificAilment(2041).getName() + "**」 is active", 0);
 				break;
 			case 11278: //LD
 				ret.fixMissingAuraAilment(2042, 926, Ailment.EffectType.E1, Ailment.Target.Party);

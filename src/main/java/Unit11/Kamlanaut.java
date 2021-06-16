@@ -14,7 +14,7 @@ public class Kamlanaut extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -87,7 +87,7 @@ public class Kamlanaut extends Unit{
 		switch(ret.getId()) {
 			case 10347: //BRV++
 				Ailment ail2 = this.getSpecificAilment(1843);
-				ret.addStaticHit("Enabled when 「**" + ail.getName() + "**」 and 「**" + ail2.getName() + "**」 are active", 0);
+				ret.addStaticHit("Enabled when ?**" + ail.getName() + "**」 and ?**" + ail2.getName() + "**」 are active", 0);
 				ret.removeAilmentById(1577);
 				break;
 			case 6968: //S1++
@@ -100,7 +100,7 @@ public class Kamlanaut extends Unit{
 			case 6736: //HP+
 			case 6714: //S1+
 			case 10229: //S1+ JP
-				ret.addStaticHit("Enabled when 「**" + ail.getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + ail.getName() + "**」 is active", 0);
 				break;
 			case 6726: //S2+
 				if(ret.getId() == 6726) ret.fixMergeAbility(6732);
@@ -108,7 +108,7 @@ public class Kamlanaut extends Unit{
 				if(ret.getId() == 10235) ret.fixMergeAbility(10241);
 			case 6754: //EX+
 				ret.fixDelayHitData(6614);
-				ret.addStaticHit("Enabled when 「**" + ail.getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + ail.getName() + "**」 is active", 0);
 				Ailment ail3 = ret.getAilmentById(1329);
 				if(ail3.getEffects().size() > 2) {
 					ail3.getEffects().remove(0);
@@ -136,7 +136,7 @@ public class Kamlanaut extends Unit{
 					ret.fixMissingAuraAilment(1328, 423, null, Ailment.Target.AoE);
 					ret.addStaticAilmentEffect(1328, "Dispelled when broken");
 				}
-				ret.addStaticHit("Dispels 「**" + this.getSpecificAilment(1328).getName() + "**」 if 5 stacks and grants 「**" + ail.getName() + "**」", 0);
+				ret.addStaticHit("Dispels ?**" + this.getSpecificAilment(1328).getName() + "**」 if 5 stacks and grants ?**" + ail.getName() + "**」", 0);
 				Ailment ail5 = ret.getAilmentById(1329);
 				if(ail5.getEffects().size() > 2) {
 					ail5.getEffects().remove(0);

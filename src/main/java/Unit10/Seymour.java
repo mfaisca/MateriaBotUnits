@@ -13,7 +13,7 @@ public class Seymour extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -55,15 +55,15 @@ public class Seymour extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 7066:
-				ret.addStaticHit("Trigger 「**" + ret.getName() + "**」 if target HP <= 80%");
+				ret.addStaticHit("Trigger ?**" + ret.getName() + "**」 if target HP <= 80%");
 				break;
 			case 7069:
-				ret.addStaticHit("Trigger 「**" + super.getSpecificAbility(7066).getName() + "**」 if target HP <= 80%");
+				ret.addStaticHit("Trigger ?**" + super.getSpecificAbility(7066).getName() + "**」 if target HP <= 80%");
 				break;
 			case 7126:
 				ret.getAilmentById(747).setRank(-1);
-				ret.addStaticHit("Trigger 「**" + super.getSpecificAbility(7069).getName() + "**」 if target HP <= 80%");
-				ret.addStaticHit("Trigger 「**" + super.getSpecificAbility(7066).getName() + "**」 if target HP <= 30%");
+				ret.addStaticHit("Trigger ?**" + super.getSpecificAbility(7069).getName() + "**」 if target HP <= 80%");
+				ret.addStaticHit("Trigger ?**" + super.getSpecificAbility(7066).getName() + "**」 if target HP <= 30%");
 				break;
 		}
 		return ret;

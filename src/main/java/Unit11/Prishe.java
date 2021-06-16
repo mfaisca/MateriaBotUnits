@@ -12,7 +12,7 @@ public class Prishe extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -55,32 +55,32 @@ public class Prishe extends Unit{
 		switch(ret.getId()) {
 			case 8323:
 			case 8324:
-				ret.addStaticHit("Enabled after using 「**" + super.getSpecificAbility(8074).getName() + "**」 for 10 turns", 0);
+				ret.addStaticHit("Enabled after using ?**" + super.getSpecificAbility(8074).getName() + "**」 for 10 turns", 0);
 				break;
 			case 8069: //One Ilm
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(8070).getName() + "**」 for 1 use (shared)", 0);
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(8076).getName() + "**」 for 1 use (shared)", 1);
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(8070).getName() + "**」 for 1 use (shared)", 0);
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(8076).getName() + "**」 for 1 use (shared)", 1);
 				break;
 			case 8070: //Transfixion
 				ret.removeHitDataById(688);
 				ret.removeHitDataById(689);
-				ret.addStaticHit("Enabled after using 「**" + super.getSpecificAbility(8069).getName() + "**」 for 1 use (shared)", 0);
+				ret.addStaticHit("Enabled after using ?**" + super.getSpecificAbility(8069).getName() + "**」 for 1 use (shared)", 0);
 				break;
 			case 8080: //Fusion
 				ret.removeHitDataById(688);
 				ret.removeHitDataById(689);
-				ret.addStaticHit("Enabled after using 「**" + super.getSpecificAbility(8074).getName() + "**」 for 1 use (shared)", 0);
+				ret.addStaticHit("Enabled after using ?**" + super.getSpecificAbility(8074).getName() + "**」 for 1 use (shared)", 0);
 				break;
 			case 8074: //Spinning
-				ret.addStaticHit("Enables 「**BRV+**」 and 「**HP+**」 for 10 turns", 0);
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(8080).getName() + "**」 for 1 use (shared)", 1);
-				ret.addStaticHit("Enables 「**" + super.getSpecificAbility(8076).getName() + "**」 for 1 use (shared)", 2);
+				ret.addStaticHit("Enables ?**BRV+**」 and ?**HP+**」 for 10 turns", 0);
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(8080).getName() + "**」 for 1 use (shared)", 1);
+				ret.addStaticHit("Enables ?**" + super.getSpecificAbility(8076).getName() + "**」 for 1 use (shared)", 2);
 				break;
 			case 8076: //Detonation
 				ret.removeHitDataById(688);
 				ret.removeHitDataById(689);
 				ret.removeHitDataById(7806);
-				ret.addStaticHit("Enabled after using 「**" + super.getSpecificAbility(8069).getName() + "**」 or 「**" + super.getSpecificAbility(8074).getName() + "**」 for 1 use (shared)", 0);
+				ret.addStaticHit("Enabled after using ?**" + super.getSpecificAbility(8069).getName() + "**」 or ?**" + super.getSpecificAbility(8074).getName() + "**」 for 1 use (shared)", 0);
 				Ability.Details.Hit_Data hd = new Ability.Details.Hit_Data();
 				hd.setEffect(new Ability.Details.Hit_Data.Effect(Ability.Details.Hit_Data.EffectType.E135, 1));
 				hd.setArguments(new Integer[] {50});

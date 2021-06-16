@@ -16,7 +16,7 @@ public class Eiko extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -58,8 +58,8 @@ public class Eiko extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 6184: //S1
-				if(ret.getDetails().getHits().stream().noneMatch(h -> h.getType().equals(Type.HP))) {
-					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, Type.HP, Target.ST);
+				if(ret.getDetails().getHits().stream().noneMatch(h -> h.getType().equals(AttackName.HP))) {
+					ret.addHits(Ability.Details.Hit_Data.Attack_Type.Magic, AttackName.HP, Target.ST);
 					Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data();
 					adh.setEffect(new Ability.Details.Hit_Data.Effect(EffectType.E100, Hit_Data.BasedOnStat.Stat14.getId()));
 					adh.setArguments(new Integer[] {50, 20, 100100});
@@ -72,10 +72,10 @@ public class Eiko extends Unit{
 				break;
 			case 6190: //EX
 				if(ret.getAilmentById(1096).getEffects().stream().noneMatch(eg -> eg.fakeDesc != null))
-					ret.getAilmentById(1096).getEffects().add(new Ailment.EffectGrouping("Enables 「**Double Holy**」"));
+					ret.getAilmentById(1096).getEffects().add(new Ailment.EffectGrouping("Enables ?**Double Holy**」"));
 				break;
 			case 6191: //EX HP++
-				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Dispels 「**Double White**」");
+				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Dispels ?**Double White**」");
 				if(!ret.getDetails().getHits().contains(adh)) {
 					ret.getDetails().getHits().addAll(ret.getDetails().getHits());
 					ret.getDetails().getHits().add(0, adh);

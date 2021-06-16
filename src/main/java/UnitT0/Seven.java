@@ -13,7 +13,7 @@ public class Seven extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -62,10 +62,10 @@ public class Seven extends Unit{
 			case 6229:
 				ret.fixDelayHitData(6832);
 			case 6226:
-				ret.addStaticHit("+50% BRV Damage dealt if target has 「**" + this.getSpecificAilment(472).getName() + "**」", 0);
+				ret.addStaticHit("+50% BRV Damage dealt if target has ?**" + this.getSpecificAilment(472).getName() + "**」", 0);
 				break;
 			case 6223:
-				ret.addStaticHit("Cast this ability again if target has 「**" + this.getSpecificAilment(472).getName() + "**」");
+				ret.addStaticHit("Cast this ability again if target has ?**" + this.getSpecificAilment(472).getName() + "**」");
 				break;
 			case 4375:
 				ret.getAilmentById(1005).setRank(1);
@@ -78,7 +78,7 @@ public class Seven extends Unit{
 				ret.fixMissingAuraAilment(2540, 1092, Ailment.EffectType.E67, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(2540, 1093, null, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(2540, 1114, null, Ailment.Target.Party);
-				ret.addStaticHit("Enables 「**" + this.getSpecificAbility(12499).getName() + "**」 for 1 use");
+				ret.addStaticHit("Enables ?**" + this.getSpecificAbility(12499).getName() + "**」 for 1 use");
 				break;
 			case 12499: //HP+ from LD
 				ret.fixRemoveDispels();
@@ -86,7 +86,7 @@ public class Seven extends Unit{
 				ret.fixMissingAuraAilment(2541, 1131, null, Ailment.Target.AoE);
 				ret.fixMissingAuraAilment(2541, 1132, null, Ailment.Target.AoE);
 				ret.fixMissingAuraAilment(2541, 1133, null, Ailment.Target.Party);
-				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(12158).getName() + "**」 for 1 use", 0);
+				ret.addStaticHit("Enabled after using ?**" + this.getSpecificAbility(12158).getName() + "**」 for 1 use", 0);
 				break;
 			case 12569: //Trap
 				break;

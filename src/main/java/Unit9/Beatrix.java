@@ -15,7 +15,7 @@ public class Beatrix extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -73,7 +73,7 @@ public class Beatrix extends Unit{
 		switch(ret.getId()) {
 			case 10496: //S1 //JP
 				c = 3; r = 60; o = 150;
-				ret.setType(Ability.Type.S1);
+				ret.setType(Ability.AttackName.S1);
 				if(ret.getUseCount() == 6)
 					ret.setUseCount(7);
 			case 7260:  //S1 //GL
@@ -85,11 +85,11 @@ public class Beatrix extends Unit{
 					adh.setEffect(new Ability.Details.Hit_Data.Effect(EffectType.E1, 0));
 					adh.setMaxBrvOverflow(o);
 					adh.setTarget(Target.ST);
-					adh.setType(Type.BRV);
+					adh.setType(AttackName.BRV);
 					for(int i = 0; i < c; i++)
 						ret.getDetails().getHits().add(adh);
 					adh = adh.clone();
-					adh.setType(Type.HP);
+					adh.setType(AttackName.HP);
 					ret.getDetails().getHits().add(adh);
 				}break;
 			case 10501: //S2+ JP
@@ -116,7 +116,7 @@ public class Beatrix extends Unit{
 				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enabled when **total party buffs** >= " + c);
 				if(!ret.getDetails().getHits().contains(adh))
 					ret.getDetails().getHits().add(0, adh);
-//				adh = new Ability.Details.Hit_Data("Enables 「**Holy Knight's Safeguard**」 for 1 use");
+//				adh = new Ability.Details.Hit_Data("Enables ?**Holy Knight's Safeguard**」 for 1 use");
 //				if(!ret.getDetails().getHits().contains(adh))
 //					ret.getDetails().getHits().add(adh);
 				}break;
@@ -124,7 +124,7 @@ public class Beatrix extends Unit{
 				ret.removeHitDataById(504);
 				ret.getAilmentById(1401).getAuras().get(466).rankData[0] = ret.getAilmentById(1401).getAuras().get(466).rankData[0].replace("-", "");
 				ret.fixMissingAuraAilment(1401, 466, null, Ailment.Target.Party);
-				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enabled after using 「**Climhazzard**」 for 1 use");
+				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enabled after using ?**Climhazzard**」 for 1 use");
 				if(!ret.getDetails().getHits().contains(adh))
 					ret.getDetails().getHits().add(0, adh);
 				break;
@@ -133,7 +133,7 @@ public class Beatrix extends Unit{
 				ret.getAilmentById(1418).getAuras().get(483).target = Ailment.Target.Party.getId();
 				break;
 			case 10361: //LD
-				ret.addStaticAilmentEffect(1951, "Trigger 「**" + super.getSpecificAbility(10362).getName() + "**」 when attacked");
+				ret.addStaticAilmentEffect(1951, "Trigger ?**" + super.getSpecificAbility(10362).getName() + "**」 when attacked");
 				break;
 		}
 		return ret;

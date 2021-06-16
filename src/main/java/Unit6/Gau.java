@@ -13,7 +13,7 @@ public class Gau extends Unit{
 	}
 
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -74,7 +74,7 @@ public class Gau extends Unit{
 		switch(ret.getId()) {
 			case 5478: //S1
 			case 11270: //S1 LD Board
-				ret.addStaticHit("Disabled when 「**" + super.getSpecificAilment(1333).getName() + "**」 is active", 0);
+				ret.addStaticHit("Disabled when ?**" + super.getSpecificAilment(1333).getName() + "**」 is active", 0);
 				ret.removeAilmentById(1130);
 				ret.fixRemoveDispels();
 				ret.addEffectHit(Ability.Details.Hit_Data.EffectType.E37, Ability.Details.Hit_Data.Target.Self, 0, 1332);
@@ -84,7 +84,7 @@ public class Gau extends Unit{
 				break;
 			case 6555: //S1 BRV
 			case 6556: //S1 HP
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1332).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1332).getName() + "**」 is active", 0);
 				break;
 			case 6764: //S1 Counter
 			case 11271: //S1 Counter LD Board
@@ -92,7 +92,7 @@ public class Gau extends Unit{
 				break;
 			case 5484: //S2
 			case 11273: //S1 LD Board
-				ret.addStaticHit("Disabled when 「**" + super.getSpecificAilment(1332).getName() + "**」 is active", 0);
+				ret.addStaticHit("Disabled when ?**" + super.getSpecificAilment(1332).getName() + "**」 is active", 0);
 				ret.removeAilmentById(1131);
 				ret.fixRemoveDispels();
 				ret.addEffectHit(Ability.Details.Hit_Data.EffectType.E37, Ability.Details.Hit_Data.Target.Self, 0, 1333);
@@ -102,7 +102,7 @@ public class Gau extends Unit{
 				break;
 			case 6559: //S2 BRV
 			case 6562: //S2 HP
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1333).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1333).getName() + "**」 is active", 0);
 				break;
 			case 6765: //S2 Counter
 			case 11274: //S2 Counter LD Board
@@ -122,7 +122,7 @@ public class Gau extends Unit{
 				break;
 			case 10176: //LD BRV
 			case 10177: //LD HP
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1897).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1897).getName() + "**」 is active", 0);
 				break;
 			case 10203: //LD Counter
 			case 11276: //LD Counter LD Board

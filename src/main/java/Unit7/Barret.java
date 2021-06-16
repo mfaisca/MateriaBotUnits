@@ -13,7 +13,7 @@ public class Barret extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -65,7 +65,7 @@ public class Barret extends Unit{
 				}
 				break;
 			case 5803:
-				ret.addStaticAilmentEffect(1126, "Triggers 「**" + this.getSpecificAbility(5457).getName() + "**」 after an HP hit");
+				ret.addStaticAilmentEffect(1126, "Triggers ?**" + this.getSpecificAbility(5457).getName() + "**」 after an HP hit");
 				break;
 			case 5457:
 				ret.setName("Satellite");

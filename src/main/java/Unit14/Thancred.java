@@ -13,7 +13,7 @@ public class Thancred extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,7 +56,7 @@ public class Thancred extends Unit{
 		switch(ret.getId()) {
 			case 9880: //BRV++ Ninki
 			case 9879: //EX+
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(749).getName() + "**」 has 3 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(749).getName() + "**」 has 3 stacks", 0);
 		}
 		return ret;
 	}

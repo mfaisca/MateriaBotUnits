@@ -13,7 +13,7 @@ public class Leonhart extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -69,7 +69,7 @@ public class Leonhart extends Unit{
 				}
 			case 5013:
 			case 5015:
-				ret.addStaticHit("Enabled when 「**" + getSpecificAilment(618).getName() + "**」 is active and HP >= 50%", 0);
+				ret.addStaticHit("Enabled when ?**" + getSpecificAilment(618).getName() + "**」 is active and HP >= 50%", 0);
 				break;
 			case 9282:
 				ret.fixMissingAuraAilment(1732, 738, null, Ailment.Target.AoE);
@@ -78,7 +78,7 @@ public class Leonhart extends Unit{
 				ret.addStaticAilmentEffect(1732, "Grants party Dark Absorb");
 			case 5014:
 			case 5016:
-				ret.addStaticHit("Enabled when 「**" + getSpecificAilment(618).getName() + "**」 is active and HP >= 80%", 0);
+				ret.addStaticHit("Enabled when ?**" + getSpecificAilment(618).getName() + "**」 is active and HP >= 80%", 0);
 				break;
 		}
 		return ret;

@@ -13,7 +13,7 @@ public class Locke extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -55,7 +55,7 @@ public class Locke extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 4709: //S1+
-				ret.addStaticHit("Enabled after using 「**" + ret.getName().replace("+", "") + "**」 for 1 use", 0);
+				ret.addStaticHit("Enabled after using ?**" + ret.getName().replace("+", "") + "**」 for 1 use", 0);
 			case 4710: //BRV
 			case 4705: //AA
 				ret.addStaticHit("**Grants only one of the buffs at random**");
@@ -66,7 +66,7 @@ public class Locke extends Unit{
 			case 4711: //HP+ Genji
 			case 4712: //HP+ Miracle
 				ret.setName(ret.getName().replace("\\n", " "));
-				ret.addStaticHit("Enabled if 「**" + ret.getName().substring(ret.getName().indexOf("(")+1, ret.getName().indexOf(")")) + "**」 is active", 0);
+				ret.addStaticHit("Enabled if ?**" + ret.getName().substring(ret.getName().indexOf("(")+1, ret.getName().indexOf(")")) + "**」 is active", 0);
 				break;
 			case 4708: //S1
 				ret.removeHitDataById(3649);

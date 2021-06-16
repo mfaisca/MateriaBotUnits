@@ -13,7 +13,7 @@ public class Machina extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -65,7 +65,7 @@ public class Machina extends Unit{
 				ret.setName("Counter");
 				break;
 			case 10990:
-				ret.addStaticAilmentEffect(1687, "Triggers 「**" + this.getSpecificAbility(9153).getName() + "**」 when attacking a target with 「**" + this.getSpecificAilment(1687).getName() + "**」");
+				ret.addStaticAilmentEffect(1687, "Triggers ?**" + this.getSpecificAbility(9153).getName() + "**」 when attacking a target with ?**" + this.getSpecificAilment(1687).getName() + "**」");
 				break;
 			case 9153:
 				ret.getDetails().setMovementCost(30);

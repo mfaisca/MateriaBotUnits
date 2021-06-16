@@ -13,7 +13,7 @@ public class Fran extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -59,7 +59,7 @@ public class Fran extends Unit{
 			case 4054:
 			case 4055:
 			case 7376:
-			case 7377: //TODO IM LAZY FIX ME PROPERLY
+			case 7377:
 				if(ret.getAilmentById(506).getRank() != -1) {
 					ret.getAilmentById(506).setRank(-1);
 					ret.getAilmentById(506).getEffects().clear();

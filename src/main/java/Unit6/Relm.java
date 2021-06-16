@@ -15,7 +15,7 @@ public class Relm extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -64,14 +64,14 @@ public class Relm extends Unit{
 			name += _Library.SUMMON_LIST.get(id - 100000).getAttackName();
 			ret.setName(name);
 			ret.setUseCount(-1);
-			ret.setType(Ability.Type.S1);
+			ret.setType(Ability.AttackName.S1);
 			ret.setUnit(this);
 			this.getAbilities().put(id, ret);
 		}
 		switch(ret.getId()) {
 			case 9886: //BRV++
 			case 8829: //HP++
-				ret.addStaticHit("+50% BRV Damage dealt if target has 「**" + this.getSpecificAilment(466).getName() + "**」", 0);
+				ret.addStaticHit("+50% BRV Damage dealt if target has ?**" + this.getSpecificAilment(466).getName() + "**」", 0);
 				break;
 			case 8822: //S1
 				ret.fixRemoveDispels();
@@ -79,7 +79,7 @@ public class Relm extends Unit{
 				ret.removeAilmentById(533);
 				//ret.getAilmentById(136).setFake("ATK Up (during attack)", null, Ailment.Emotes.BUFF_INVISIBLE.get());
 				ret.removeAilmentById(136);
-				ret.getDetails().getHits().stream().filter(h -> h.getType() == Ability.Details.Hit_Data.Type.BRV).forEach(h -> h.setMaxBrvOverflow(150));
+				ret.getDetails().getHits().stream().filter(h -> h.getType() == Ability.Details.Hit_Data.AttackName.BRV).forEach(h -> h.setMaxBrvOverflow(150));
 				ret.addStaticHit("+100% Attack during this ability", 0);
 				ret.addStaticHit("Extra BRV hit or effect based on Summon equipped (see below)", 3);
 				break;

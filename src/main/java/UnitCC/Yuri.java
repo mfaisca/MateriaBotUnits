@@ -13,7 +13,7 @@ public class Yuri extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,7 +56,7 @@ public class Yuri extends Unit{
 		switch(ret.getId()) {
 			case 6869: //S2
 				ret.getAilmentById(337).removeEffect(53);
-				ret.addStaticAilmentEffect(337, "Prevent negative effects from 「**" + this.getSpecificAbility(6867).getName() + "**」 and 「**" + ret.getName() + "**」");
+				ret.addStaticAilmentEffect(337, "Prevent negative effects from ?**" + this.getSpecificAbility(6867).getName() + "**」 and ?**" + ret.getName() + "**」");
 				break;
 			case 6644: //EX
 				ret.fixMissingAuraAilment(1253, 432, Ailment.EffectType.E1, Ailment.Target.Party);

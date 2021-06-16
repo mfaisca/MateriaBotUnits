@@ -13,7 +13,7 @@ public class Cloud_of_Darkness extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -67,7 +67,7 @@ public class Cloud_of_Darkness extends Unit{
 				ret.fixDelayHitData(6614);
 				break;
 			case 7659: //S2+
-				ret.addStaticHit("Enabled when 「**" + darkness.getName() + "**」 has 5 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + darkness.getName() + "**」 has 5 stacks", 0);
 				ret.addStaticHit("Free ability use", 0);
 				ret.fixDelayHitData(5841);
 				break;

@@ -12,7 +12,7 @@ public class Zidane extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -54,13 +54,13 @@ public class Zidane extends Unit{
 		Ability ret = super.getSpecificAbility(id);
 		switch(ret.getId()) {
 			case 8339:{ //EX+
-				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enables 「**Mug**」 for 1 use");
+				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enables ?**Mug**」 for 1 use");
 				if(!ret.getDetails().getHits().contains(adh))
 					ret.getDetails().getHits().add(adh);
 				}break;
 			case 8340:{ //EX+ (HP+)
 				ret.removeHitDataById(5333);
-				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enabled after using 「**Booster 8**」 for 1 use");
+				Ability.Details.Hit_Data adh = new Ability.Details.Hit_Data("Enabled after using ?**Booster 8**」 for 1 use");
 				if(!ret.getDetails().getHits().contains(adh))
 					ret.getDetails().getHits().add(0, adh);
 				}break;

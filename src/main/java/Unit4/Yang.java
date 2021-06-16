@@ -13,7 +13,7 @@ public class Yang extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -66,7 +66,7 @@ public class Yang extends Unit{
 		switch(ret.getId()) {
 			case 7678: //S1+
 			case 12404: 
-				ret.addStaticHit("Enabled after using 「**" + this.getSpecificAbility(7680).getName() + "**」 for 8 turns", 0);
+				ret.addStaticHit("Enabled after using ?**" + this.getSpecificAbility(7680).getName() + "**」 for 8 turns", 0);
 				ret.getHitDataById(369).getEffect().setEffectValueType(Ability.Details.Hit_Data.BasedOnStat.Stat5.getId());
 				break;
 			case 7680:

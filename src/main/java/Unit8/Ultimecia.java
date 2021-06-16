@@ -12,7 +12,7 @@ public class Ultimecia extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -61,7 +61,7 @@ public class Ultimecia extends Unit{
 				}break;
 			case 4838: //S1+
 			case 4848: //S2+
-				ret.addStaticHit("Enabled when 「**" + ret.getAilmentById(1017).getName() + " V**」 is active");
+				ret.addStaticHit("Enabled when ?**" + ret.getAilmentById(1017).getName() + " V**」 is active");
 			case 4837: //S1
 			case 4847: //S2
 			case 8798:{ //LD

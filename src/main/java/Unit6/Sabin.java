@@ -13,7 +13,7 @@ public class Sabin extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -58,7 +58,7 @@ public class Sabin extends Unit{
 				ret.fixDelayHitData(6614);
 			case 5982: //S1+
 			case 5993: //EX+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1188).getName() + "**」 has 2+ stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1188).getName() + "**」 has 2+ stacks", 0);
 				break;
 		}
 		return ret;

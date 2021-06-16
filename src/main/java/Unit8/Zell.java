@@ -13,7 +13,7 @@ public class Zell extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -64,14 +64,14 @@ public class Zell extends Unit{
 			case 5199: //HP++
 			case 5160: //S1+
 			case 5165: //S2+
-				ret.addStaticHit("Enabled when 「**Duel**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**Duel**」 is active", 0);
 				break;
 			case 5170: //HP+EX
 				if(ret.getDetails().getHits().size() == 5)
 					ret.getDetails().getHits().addAll(super.getSpecificAbility(5165).getDetails().getHits());
 			case 5169: //BRV+EX
 				ret.getDetails().setChaseDmg(3);
-				ret.addStaticHit("Enabled after using 「**Different Beat**」 for 1 use __**(shared)**__", 0);
+				ret.addStaticHit("Enabled after using ?**Different Beat**」 for 1 use __**(shared)**__", 0);
 				break;
 		}
 		return ret;

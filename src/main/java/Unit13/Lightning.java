@@ -13,7 +13,7 @@ public class Lightning extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,25 +56,25 @@ public class Lightning extends Unit{
 		switch(ret.getId()) {
 			case 4541:
 			case 7877:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(515).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(515).getName() + "**」 is active", 0);
 				ret.removeHitDataById(5200);
 				ret.removeHitDataById(5201);
 				break;
 			case 4542:
 			case 7878:
-				ret.addStaticHit("Enabled when 「**" + this.getSpecificAilment(518).getName() + "**」 is active", 0);
+				ret.addStaticHit("Enabled when ?**" + this.getSpecificAilment(518).getName() + "**」 is active", 0);
 				ret.removeHitDataById(5203);
 				ret.removeHitDataById(5204);
 				break;
 			case 4534: //S1+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(518).getName() + "**」 has 2 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(518).getName() + "**」 has 2 stacks", 0);
 				break;
 			case 4540: //S2+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(515).getName() + "**」 has 2 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(515).getName() + "**」 has 2 stacks", 0);
 				break;
 			case 7559:
 				ret.fixDelayHitData(3732);
-				ret.addStaticHit("Delays target by 1 turn if 「**" + this.getSpecificAilment(515).getName() + "**」 is active (Army of One+)");
+				ret.addStaticHit("Delays target by 1 turn if ?**" + this.getSpecificAilment(515).getName() + "**」 is active (Army of One+)");
 				break;
 			case 9624:
 				ret.fixMissingAuraAilment(1791, 788, null, Ailment.Target.Party);

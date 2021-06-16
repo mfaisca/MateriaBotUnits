@@ -13,7 +13,7 @@ public class Caius extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -60,7 +60,7 @@ public class Caius extends Unit{
 				break;
 			case 7156: //S1+
 			case 7164: //S2+
-				ret.addStaticHit("Enabled when 「**" + super.getSpecificAilment(1397).getName() + "**」 has 5 stacks", 0);
+				ret.addStaticHit("Enabled when ?**" + super.getSpecificAilment(1397).getName() + "**」 has 5 stacks", 0);
 				break;
 			case 7786: //EX
 			case 7787: //EX+

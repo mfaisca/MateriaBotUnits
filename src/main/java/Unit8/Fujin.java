@@ -8,11 +8,11 @@ import org.plugface.core.annotations.Plugin;
 @Plugin(name = "Unit.Fujin")
 public class Fujin extends Unit{
 	public Fujin() {
-		super("Fujin", "fu-jin", "wind god", "wind goddess");
+		super("Fujin", "fu-jin", "wind god", "wind goddess", "fuujin");
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -58,14 +58,14 @@ public class Fujin extends Unit{
 		switch(ret.getId()) {
 			case 8190: //S1
 			case 8194:{ //S2
-				ret.addStaticHit("Enables 「**Wind Mode**」 for 6 turns");
+				ret.addStaticHit("Enables ?**Wind Mode**」 for 6 turns");
 				ret.fixMissingAuraAilment(1536, 595, Ailment.EffectType.E1, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1536, 596, Ailment.EffectType.E8, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1536, 597, null, Ailment.Target.Party);
 				}break;
 			case 8191: //S1+
 			case 8195: //S2+
-				ret.addStaticHit("Enabled when 「**Wind Mode**」 is active");
+				ret.addStaticHit("Enabled when ?**Wind Mode**」 is active");
 				ret.fixMissingAuraAilment(1536, 595, Ailment.EffectType.E1, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1536, 596, Ailment.EffectType.E8, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1536, 597, null, Ailment.Target.Party);
@@ -74,7 +74,7 @@ public class Fujin extends Unit{
 				ret.fixMissingAuraAilment(1161, 321, Ailment.EffectType.E1, Ailment.Target.Party);
 				break;
 			case 8199:
-				ret.addStaticHit("Enables 「**Wind Mode**」 for 6 turns");
+				ret.addStaticHit("Enables ?**Wind Mode**」 for 6 turns");
 				Ailment ailEX = ret.getAilmentById(1537);
 				ailEX.getArgs()[ailEX.getRank()] = 7700;
 				break;

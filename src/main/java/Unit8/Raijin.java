@@ -14,7 +14,7 @@ public class Raijin extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -57,24 +57,24 @@ public class Raijin extends Unit{
 		switch(ret.getId()) {
 			case 8704: //S1+
 			case 8706: //S2+
-				ret.addStaticHit("Enabled when 「**Thunder Mode**」 is active");
+				ret.addStaticHit("Enabled when ?**Thunder Mode**」 is active");
 				break;
 			case 8712: //HP++
 				Ability.Details.Hit_Data hd = ret.getHitDataById(6986);
 				ret.getDetails().getHits().remove(hd);
-				ret.addStaticHit("Enabled when 「**Thunderpeal**」 has 3 stacks", 0);
+				ret.addStaticHit("Enabled when ?**Thunderpeal**」 has 3 stacks", 0);
 				ret.getDetails().getHits().add(1, hd);
 				break;
 			case 6661: //AA
 				ret.fixMissingAuraAilment(1286, 409, null, Ailment.Target.Party);
 				break;
 			case 8702: //S2
-				ret.addStaticHit("Enables 「**Thunder Mode**」 for 6 turns");
+				ret.addStaticHit("Enables ?**Thunder Mode**」 for 6 turns");
 				break;
 			case 8710: //EX
 				EffectGrouping eg = ret.getAilmentById(1258).getEffects().remove(1);
 				ret.getAilmentById(1258).getEffects().add(0, eg);
-				ret.addStaticHit("Enables 「**Thunder Mode**」 for 6 turns");
+				ret.addStaticHit("Enables ?**Thunder Mode**」 for 6 turns");
 				ret.fixMissingAuraAilment(1258, 387, null, Ailment.Target.Party);
 				ret.fixMissingAuraAilment(1258, 388, Ailment.EffectType.E7, Ailment.Target.Party);
 				ret.getAilmentById(1258).setRank(-1);

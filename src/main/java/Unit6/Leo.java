@@ -13,7 +13,7 @@ public class Leo extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -60,7 +60,7 @@ public class Leo extends Unit{
 			case 6905: //S2
 				ret.fixDelayHitData(5126);
 				ret.fixDelayHitData(5127);
-				ret.addStaticHit("Doubles battery and delay if target has 「**" + super.getSpecificAilment(1356).getName() + "**」");
+				ret.addStaticHit("Doubles battery and delay if target has ?**" + super.getSpecificAilment(1356).getName() + "**」");
 				break;
 			case 7529:
 				ret.setName(ret.getName() + "+");

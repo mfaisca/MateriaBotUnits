@@ -13,7 +13,7 @@ public class Deuce extends Unit{
 	}
 	
 	@Override
-	public List<Ability> getAbility(Ability.Type type, String region) {
+	public List<Ability> getAbility(Ability.AttackName type, String region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
@@ -56,10 +56,10 @@ public class Deuce extends Unit{
 		switch(ret.getId()) {
 			case 5214: //HP+
 				ret.getHitDataById(6074).setArguments(new Integer[] {10, 15, 20});
-				ret.addStaticHit("Battery potency increases based on number of 「**" + this.getSpecificAilment(693).getName() + "**」(1/2/3) on the party");
+				ret.addStaticHit("Battery potency increases based on number of ?**" + this.getSpecificAilment(693).getName() + "**」(1/2/3) on the party");
 				break;
 			case 5222: //S2
-				ret.addStaticAilmentEffect(696, "Buff Potency increased based on number of 「**" + this.getSpecificAilment(693).getName() + "**」(1/2/3) on the party");
+				ret.addStaticAilmentEffect(696, "Buff Potency increased based on number of ?**" + this.getSpecificAilment(693).getName() + "**」(1/2/3) on the party");
 				ret.addStaticAilmentEffect(696, "10/20/40% Max BRV");
 				ret.addStaticAilmentEffect(696, "BRV Regen (10/20/40% IBRV)");
 				break;
