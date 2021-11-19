@@ -4,9 +4,7 @@ import org.plugface.core.annotations.Plugin;
 
 @Plugin(name = "Unit.Nine")
 public class Nine extends Unit{
-	public Nine() {
-		super("Nine");
-	}
+	public Nine() { super("Nine"); }
 	
 	@Override
 	public Ailment getSpecificAilment(Integer id) {
@@ -22,11 +20,14 @@ public class Nine extends Unit{
 	}
 	
 	@Override
-	public void loadFix() {
-		super.loadFix();
+	public void loadFixGL() {
 		this.getAbilities().values().stream()
-				.flatMap(a -> a.getAilments().stream())
-				.filter(a -> a.getId() == 1459 && a.getAilmentConditionId() == 13)
-				.forEach(a -> a.setArgs(new Integer[] {1,0}));
+			.flatMap(a -> a.getAilments().stream())
+			.filter(a -> a.getId() == 1459 && a.getAilmentConditionId() == 13)
+			.forEach(a -> a.setArgs(new Integer[] {1,0}));
+	}
+	@Override
+	public void loadFixJP() {
+		super.loadFixGL();
 	}
 }

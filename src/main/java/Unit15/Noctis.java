@@ -8,33 +8,31 @@ import org.plugface.core.annotations.Plugin;
 
 @Plugin(name = "Unit.Noctis")
 public class Noctis extends Unit{
-	public Noctis() {
-		super("Noctis");
-	}
+	public Noctis() { super("Noctis"); }
 	
 	@Override
-	public List<Ability> getAbility(AttackName type, String region) {
+	public List<Ability> getAbility(AttackName type, Region region) {
 		int[] ids = new int[0];
 		switch(type) {
 			case BRV:
 				break;
 			case HP:
-				ids = region.equals("GL") ? new int[]{4327, 4328, 9450} : new int[]{4327, 9333, 9451};
+				ids = Region.GL.equals(region) ? new int[]{4327, 4328, 9450} : new int[]{4327, 9333, 9451};
 				break;
 			case S1:
-				ids = region.equals("GL") ? new int[]{9323, 9324, 9450} : new int[]{15400, 15401, 9451};
+				ids = Region.GL.equals(region) ? new int[]{9323, 9324, 9450} : new int[]{15400, 15401, 9451};
 				break;
 			case S2:
-				ids = region.equals("GL") ? new int[]{9331, 9332, 9450} : new int[]{15406, 15407, 9451};
+				ids = Region.GL.equals(region) ? new int[]{9331, 9332, 9450} : new int[]{15406, 15407, 9451};
 				break;
 			case EX:
-				ids = region.equals("GL") ? new int[]{7300, 7302} : new int[]{15410, 15411};
+				ids = Region.GL.equals(region) ? new int[]{7300, 7302} : new int[]{15410, 15411};
 				break;
 			case AA:
-				ids = region.equals("GL") ? new int[]{4067} : new int[]{15418};
+				ids = Region.GL.equals(region) ? new int[]{4067} : new int[]{15418};
 				break;
 			case LD:
-				ids = region.equals("GL") ? new int[]{13347, 9450} : new int[]{13347, 9451};
+				ids = Region.GL.equals(region) ? new int[]{13347, 9450} : new int[]{13347, 9451};
 				break;
 			case BT:
 				ids = new int[]{9216, 15415};
