@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.plugface.core.annotations.Plugin;
 
-@Plugin(name = "Unit.Emperorr")
-public class The_Emperorr extends Unit{
-	public The_Emperorr() { super("The Emperorr"); }
+@Plugin(name = "Unit.Emperor")
+public class The_Emperor extends Unit{
+	public The_Emperor() { super("The Emperor"); }
 	
 	@Override
 	public List<Ability> getAbility(AttackName type, Region region) {
