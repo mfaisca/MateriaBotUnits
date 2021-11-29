@@ -1,9 +1,8 @@
 package Unit02;
 import com.materiabot.GameElements.*;
+import com.materiabot.GameElements.Ability.BestAbilities;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import Shared.Methods;
 import org.plugface.core.annotations.Plugin;
 
 @Plugin(name = "Unit.Emperor")
@@ -11,91 +10,90 @@ public class The_Emperor extends Unit{
 	public The_Emperor() { super("The Emperor"); }
 	
 	@Override
-	public List<Ability> getAbility(AttackName type, Region region) {
-		int[] ids = new int[0];
+	public BestAbilities getAbility(AttackName type, Region region) {
+		BestAbilities ret = null;
 		switch(type) {
 			case BRV:
-				break;
+				ret = new BestAbilities(this, 9788, 9788); break;
 			case HP:
-				ids = Region.GL.equals(region) ? new int[]{4327, 4328, 9450} : new int[]{4327, 9333, 9451};
-				break;
-			case S1:
-				ids = Region.GL.equals(region) ? new int[]{9323, 9324, 9450} : new int[]{15400, 15401, 9451};
-				break;
-			case S2:
-				ids = Region.GL.equals(region) ? new int[]{9331, 9332, 9450} : new int[]{15406, 15407, 9451};
-				break;
-			case EX:
-				ids = Region.GL.equals(region) ? new int[]{7300, 7302} : new int[]{15410, 15411};
-				break;
-			case AA:
-				ids = Region.GL.equals(region) ? new int[]{4067} : new int[]{15418};
-				break;
+				ret = new BestAbilities(this, 9789, 9789); break;
 			case LD:
-				ids = Region.GL.equals(region) ? new int[]{11591, 9450} : new int[]{13347, 9451};
-				break;
+				ret = new BestAbilities(this, 11591, 11591); break;
 			case BT:
-				ids = new int[]{9216, 15415};
-				break;
-			case CA:
-				break;
+				ret = Region.GL.equals(region) ? new BestAbilities(this, 11234, 11234, 11649) : 
+												 new BestAbilities(this, 16610, 11234, 11649, 16610, 16611); break;
 			case CALD:
-				break;
+				ret = new BestAbilities(this, 11844, 11844); break;
 			default:
 				break;
 		}
-		if(ids.length == 0)
+		if(ret == null)
 			return super.getAbility(type, region);
-		else
-			return IntStream.of(ids).boxed().map(i -> this.getSpecificAbility(i)).collect(Collectors.toList());
+		if(ret.getAbilities().isEmpty())
+			ret.getAbilities().addAll(super.getAbility(type, region).getAbilities());
+		return ret;
 	}
 	
-	@Override
-	public Ability getSpecificAbility(Integer id) {
-		Ability a = super.getSpecificAbility(id);
-		if(a != null)
-			switch(a.getId()) {
-			case 4560:
-				a.setName(super.getSpecificAbility(9450).getName());
-				break;
-			}
-		return a;
-	}
-	@Override
-	public Passive getSpecificPassive(Integer id) {
-		return super.getSpecificPassive(id);
-	}
-	@Override
-	public Ailment getSpecificAilment(Integer id) {
-		return super.getSpecificAilment(id);
-	}
-	//BRV GL
-	//HP GL
-	//S1 GL 6026
-	//S1T GL 6023
-	//S2 GL 6040
-	//S2T GL 6037 415
-	//EX GL 6057
-	//EXT GL 6059
-	//LD GL
-	
-	//BRV JP
-	//HP JP
-	//S1 JP  11641
-	//S1T JP 6029  aid 413
-	//S2 JP 11647
-	//S2T JP 6043
-	//EX JP 16605
-	//EXT JP 16607 aid 417
-	//LD JP 11591
-	
-	//BT/BT+/BTT 11234/16610/11649
 	@Override
 	public void loadFixGL() {
-		this.getTriggeredAbilities().clear();
+		//Ailment get for easier access
+		Ailment aS1 = this.getSpecificAilment(413);
+		Ailment aS2 = this.getSpecificAilment(415);
+		Ailment aEX = this.getSpecificAilment(417);
+		Ailment aBT = this.getSpecificAilment(2431);
+		//AA Rank Fix
+		this.getSpecificAilment(1245).setRank(2);
+		//LD Call Name Fix
+		this.getSpecificAilment(11782).setName(new Text(aS1.getName().getBest() + " (C)"));
+		this.getSpecificAilment(11595).setName(new Text(aS2.getName().getBest() + " (C)"));
+		this.getSpecificAilment(11784).setName(new Text(aEX.getName().getBest() + " (C)"));
+		this.getSpecificAbility(11844).getAilments().addAll(this.getSpecificAbility(11595).getAilments());
+		//Fix Trap Names
+		this.getSpecificAbility(6029).setName(aS1.getName());
+		this.getSpecificAbility(6043).setName(aS2.getName());
+		this.getSpecificAbility(6059).setName(aEX.getName());
+		this.getSpecificAbility(11649).setName(new Text(aBT.getName().getBest() + " (BT Only)"));
+		//Trap Triggering
+		Ability a = this.getSpecificAbility(11641); //S1
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS1.getName().getBest()) + " if active on target"));
+		a = this.getSpecificAbility(11647); //S2
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS2.getName().getBest()) + " if active on target"));
+		a = this.getSpecificAbility(9788); //BRV
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS2.getName().getBest()) + " if active on target"));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS1.getName().getBest()) + " if active on target"));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aEX.getName().getBest()) + " if active on target"));
+		a = this.getSpecificAbility(9789); //HP
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS2.getName().getBest()) + " if active on target"));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS1.getName().getBest()) + " if active on target"));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aEX.getName().getBest()) + " if active on target"));
+		a = this.getSpecificAbility(6056); //EX
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS2.getName().getBest()) + " if active on target"));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS1.getName().getBest()) + " if active on target"));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aEX.getName().getBest()) + " if active on target"));
+		a = this.getSpecificAbility(11591); //LD
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS2.getName().getBest())));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS1.getName().getBest())));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aEX.getName().getBest())));
+		a = this.getSpecificAbility(11844); //CALD
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS2.getName().getBest())));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS1.getName().getBest())));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aEX.getName().getBest())));
 	}
 	@Override
 	public void loadFixJP() {
 		loadFixGL();
+		this.getSpecificAilment(3558).setRank(2);
+		Ailment aS1 = this.getSpecificAilment(413);
+		Ailment aS2 = this.getSpecificAilment(415);
+		Ailment aEX = this.getSpecificAilment(417);
+		Ailment aBT = this.getSpecificAilment(2431);
+		//Fix Trap Names
+		this.getSpecificAbility(16607).setName(aEX.getName());
+		this.getSpecificAbility(16611).setName(new Text(aBT.getName().getBest() + " (BT+ 2/3)"));
+		//Trap Triggering
+		Ability a = this.getSpecificAbility(16604);
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS2.getName().getBest()) + " if active on target"));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS1.getName().getBest()) + " if active on target"));
+		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aEX.getName().getBest()) + " if active on target"));
 	}
 }

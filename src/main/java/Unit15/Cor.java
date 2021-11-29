@@ -5,7 +5,7 @@ import org.plugface.core.annotations.Plugin;
 
 @Plugin(name = "Unit.Cor")
 public class Cor extends Unit{
-	public Cor() { super("Cor"); }//14862
+	public Cor() { super("Cor"); }
 	
 	@Override
 	public void loadFixGL() {
