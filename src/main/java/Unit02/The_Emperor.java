@@ -2,6 +2,7 @@ package Unit02;
 import com.materiabot.GameElements.*;
 import com.materiabot.GameElements.Ability.BestAbilities;
 import com.materiabot.GameElements.Enumerators.Ability.AttackName;
+import com.materiabot.IO.JSON.UnitParser;
 import Shared.Methods;
 import org.plugface.core.annotations.Plugin;
 
@@ -12,7 +13,7 @@ public class The_Emperor extends Unit{
 	@Override
 	public BestAbilities getAbility(AttackName type, Region region) {
 		BestAbilities ret = null;
-		switch(type) {
+		switch(type) { //Emperor Abilities must be overrode because they are followups to the traps
 			case BRV:
 				ret = new BestAbilities(this, 9788, 9788); break;
 			case HP:
@@ -95,5 +96,6 @@ public class The_Emperor extends Unit{
 		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS2.getName().getBest()) + " if active on target"));
 		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aS1.getName().getBest()) + " if active on target"));
 		a.getHitData().add(new HitData(a, "Trigger " + Methods.enframe(aEX.getName().getBest()) + " if active on target"));
+		UnitParser.fixBT(this, 16610, 200, 350, 60);
 	}
 }
