@@ -20,9 +20,4 @@ public class Cor extends Unit{
 		this.getTriggeredAbilities().remove(this.getTriggeredAbilities().stream().filter(ta -> ta.getId() == 61).findFirst().orElse(null));
 		this.getAbilities().values().stream().flatMap(a -> a.getAilments().stream()).filter(a -> a.getRank() == -1).forEach(a -> a.setRank(0));
 	}
-	
-	@Override
-	public void loadFixJP() {
-		loadFixGL();
-	}
 }

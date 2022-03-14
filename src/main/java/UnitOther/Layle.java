@@ -10,8 +10,4 @@ public class Layle extends Unit{
 	public void loadFixGL() {
 		this.getSpecificAbility(12912).getAilments().removeIf(a -> a.getId() == 111);
 	}
-	@Override
-	public void loadFixJP() {
-		super.loadFixGL();
-	}
 }

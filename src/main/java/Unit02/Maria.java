@@ -10,8 +10,4 @@ public class Maria extends Unit{
 	public void loadFixGL() {
 		this.getSpecificAbility(16326).getAilments().removeIf(a -> a.getId() == 111);
 	}
-	@Override
-	public void loadFixJP() {
-		loadFixGL();
-	}
 }

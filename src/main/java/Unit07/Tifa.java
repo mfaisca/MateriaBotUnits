@@ -10,9 +10,4 @@ public class Tifa extends Unit{
 	public void loadFixGL() {
 		this.getSpecificAilment(2662).setName(new Text("Attack Change"));
 	}
-	
-	@Override
-	public void loadFixJP() {
-		loadFixGL();
-	}
 }

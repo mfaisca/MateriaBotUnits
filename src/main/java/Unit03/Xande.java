@@ -10,9 +10,4 @@ public class Xande extends Unit{
 	public void loadFixGL() {
 		this.getUpgradedAbilities().removeIf(ua -> ua.getId() == 18 || ua.getId() == 19 || ua.getId() == 20);
 	}
-	
-	@Override
-	public void loadFixJP() {
-		loadFixGL();
-	}
 }

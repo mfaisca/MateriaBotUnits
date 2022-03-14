@@ -11,8 +11,4 @@ public class Garland extends Unit{
 	public void loadFixGL() {
 		UnitParser.fixBT(this, 17137, null, 400, null);
 	}
-	@Override
-	public void loadFixJP() {
-		loadFixGL();
-	}
 }

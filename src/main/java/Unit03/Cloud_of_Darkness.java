@@ -32,8 +32,4 @@ public class Cloud_of_Darkness extends Unit{
 					a.getHitData().add(new HitData(a, "Doesn't consume a skill use")); break;
 			}
 	}
-	@Override
-	public void loadFixJP() {
-		loadFixGL();
-	}
 }
